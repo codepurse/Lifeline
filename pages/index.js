@@ -1,8 +1,10 @@
 import Head from "../components/head";
+import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "../components/navbar";
 import { Container, Row, Col } from "react-bootstrap";
-const playVideo = () => document.getElementById("myVideo").play();
 const Index = () => (
+
   <html>
     <head />
     <body>
@@ -61,16 +63,25 @@ const Index = () => (
                 <span className="lblRemember">Remember me</span>
               </label>
               <span className="lblForgot">Forgot password?</span> <br />
-              <button className="btnSignIn" onClick={playVideo}>Sign In</button>
+              <button className="btnSignIn" onClick="playVid()">
+                Sign In
+              </button>
               <p className="pDont">
-                Don't have an account? <span>Sign Up</span>
+                Don't have an account?<Link href = "/signup"><a><span>Sign Up</span></a></Link>
               </p>
             </div>
           </Col>
           <Col lg={8} className="colright">
+            <div className="btn play">
+              <span className="bar bar-1"></span>
+              <span className="bar bar-2"></span>
+            </div>
             <div className="banner">
-              <video muted id="myVideo" poster = "Image/ambulance.jpg">
-                <source src = "Video/LifelineAmbulanceRescue.mp4" type="video/mp4" />
+              <video muted id="myVideo" poster="Image/ambulance.jpg">
+                <source
+                  src="Video/LifelineAmbulanceRescue.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support HTML5 video.
               </video>
             </div>
@@ -92,7 +103,7 @@ const Index = () => (
         }
         .pHello {
           font-family: roboto, sans-serif;
-          color: #424242;
+          color: rgb(230, 49, 49);
           font-size: 2rem;
           font-weight: bold;
         }
@@ -123,9 +134,10 @@ const Index = () => (
         .pEmail,
         .pPassword {
           font-family: roboto, sans-serif;
-          color: #9e9e9e;
+          color: #424242;
           font-size: 0.9rem;
           float: left;
+          font-weight: 500;
         }
         .pPassword {
           margin-top: 20px;
@@ -237,6 +249,7 @@ const Index = () => (
           font-family: roboto, sans-serif;
           color: #424242;
           font-size: 0.9rem;
+          font-weight: 500;
         }
         .lblRemember:hover {
           color: rgb(230, 49, 49);
@@ -298,9 +311,9 @@ const Index = () => (
           height: 100vh;
           overflow: hidden;
           display: flex;
-      }
-      
-      .banner video {
+        }
+
+        .banner video {
           position: absolute;
           top: 0;
           left: 0;
@@ -308,10 +321,58 @@ const Index = () => (
           width: 100%;
           height: 100%;
           pointer-events: none;
-      }
-      video[poster] {
-        filter: brightness(50%);
-      }
+        }
+        video[poster] {
+          filter: brightness(50%);
+        }
+        .btn {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          border: white 3px solid;
+          border-radius: 3px;
+          cursor: pointer;
+          transition: border 0.1s ease-in-out;
+          z-index: 99999;
+        }
+        .btn:hover {
+          border: #333 3px solid;
+        }
+        .btn:hover .bar {
+          background-color: #333;
+        }
+        .btn .bar {
+          display: inline-block;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 3px;
+          height: 20px;
+          border-radius: 3px;
+          background-color: white;
+          -webkit-transform-origin: center;
+                  transform-origin: center;
+          transition: background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
+          transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
+          transition: transform 0.4s ease-in-out, background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
+        }
+        .btn.pause .bar-1 {
+          -webkit-transform: translateX(13.5px) translateY(0px) rotate(0deg);
+                  transform: translateX(13.5px) translateY(0px) rotate(0deg);
+        }
+        .btn.pause .bar-2 {
+          -webkit-transform: translateX(24px) translateY(0px) rotate(0deg);
+                  transform: translateX(24px) translateY(0px) rotate(0deg);
+        }
+        .btn.play .bar-1 {
+          -webkit-transform: translateX(20px) translateY(-5px) rotate(-55deg);
+                  transform: translateX(20px) translateY(-5px) rotate(-55deg);
+        }
+        .btn.play .bar-2 {
+          -webkit-transform: translateX(20px) translateY(5px) rotate(-125deg);
+                  transform: translateX(20px) translateY(5px) rotate(-125deg);
+        }
+        
       `}</style>
     </body>
   </html>
