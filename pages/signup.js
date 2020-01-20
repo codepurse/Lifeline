@@ -60,11 +60,11 @@ const Index = () => (
               />
             </div>
             <div className="divFooter">
-              <button className="btnSignIn" onClick="playVid()">
+              <button className="btnSignUp">
                 Sign In
               </button>
               <p className="pDont">
-                Already have an account? <span>Sign In</span>
+                Already have an account? <span>Sign Up</span>
               </p>
             </div>
           </Col>
@@ -134,7 +134,7 @@ const Index = () => (
           color: #424242;
           font-size: 0.9rem;
           float: left;
-          font-weight: 500;
+        
         }
         .pPassword {
           margin-top: 20px;
@@ -263,7 +263,7 @@ const Index = () => (
         .lblForgot:hover {
           color: rgb(230, 49, 49);
         }
-        .btnSignIn {
+        .btnSignUp {
           font-family: roboto, sans-serif;
           color: white;
           font-size: 1rem;
@@ -271,10 +271,10 @@ const Index = () => (
           border: 0px;
           width: 350px;
           border-radius: 5px;
-          padding: 14px 10px;
+          padding: 10px 10px;
           cursor: pointer;
           transition: all 0.2s;
-          margin-top: 20px;
+          margin-top: 0px;
           box-shadow: 0 2px 12px -6px #e63131 !important;
         }
         .pDont {

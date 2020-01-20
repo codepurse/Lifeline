@@ -67,7 +67,7 @@ const Index = () => (
                 Sign In
               </button>
               <p className="pDont">
-                Don't have an account?<Link href = "/signup"><a><span>Sign Up</span></a></Link>
+                Don't have an account?<Link href = "/signup"><a><span>Sign Up </span></a></Link>
               </p>
             </div>
           </Col>
@@ -256,7 +256,7 @@ const Index = () => (
         }
         .lblForgot {
           font-family: roboto, sans-serif;
-          color: #9e9e9e;
+          color: rgb(230, 49, 49);
           float: right;
           font-size: 0.9rem;
           cursor: pointer;
@@ -264,7 +264,7 @@ const Index = () => (
           margin-top: 2px;
         }
         .lblForgot:hover {
-          color: rgb(230, 49, 49);
+          color: rgb(230, 49, 49, 0.5);
         }
         .btnSignIn {
           font-family: roboto, sans-serif;
@@ -274,7 +274,7 @@ const Index = () => (
           border: 0px;
           width: 350px;
           border-radius: 5px;
-          padding: 14px 10px;
+          padding: 10px 10px;
           cursor: pointer;
           transition: all 0.2s;
           margin-top: 20px;
@@ -282,10 +282,11 @@ const Index = () => (
         }
         .pDont {
           font-family: roboto, sans-serif;
-          color: #9e9e9e;
+          color: #424242;
           font-size: 0.9rem;
           cursor: pointer;
-          margin-top: 20px;
+          transition: all 0.2s;
+          margin-top: 10px;
         }
         .pDont > span {
           color: rgb(230, 49, 49);
