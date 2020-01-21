@@ -17,7 +17,7 @@ const Index = () => (
             justifyContent: "center"
           }}
         >
-          <Col lg={4} className="text-center">
+          <Col lg={4} md={4} sm={12} className="text-center">
             <div className="form-inline text-center">
               <img
                 src="Image/logo.png"
@@ -71,7 +71,7 @@ const Index = () => (
               </p>
             </div>
           </Col>
-          <Col lg={8} className="colright">
+          <Col lg={8} md={8} sm={12} className="colright">
             <div className="btn play">
               <span className="bar bar-1"></span>
               <span className="bar bar-2"></span>
@@ -89,6 +89,12 @@ const Index = () => (
         </Row>
       </Container>
       <style jsx>{`
+        @media only screen and (max-width: 511px) {
+          .btn , .colright, .banner{
+            display: none !important;
+          } 
+      }
+
         .myVideo {
           position: absolute;
           right: 0;

@@ -86,6 +86,13 @@ const Index = () => (
         </Row>
       </Container>
       <style jsx>{`
+    @media only screen and (max-width: 511px) {
+      .btn , .colright, .banner{
+        display: none !important;
+      } 
+  }
+
+
         .myVideo {
           position: absolute;
           right: 0;
