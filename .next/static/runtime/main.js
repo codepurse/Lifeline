@@ -5157,7 +5157,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\Alfon\\Documents\\Github\\nextjs\\lifeline\\Lifeline\\.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "/Users/randolphyu/Downloads/Lifeline-master/.next");
       return error;
     }
   };

@@ -1,4 +1,9 @@
+$(document).ready(function() {
+  $(".play-button").click(function() {
+    $(this).toggleClass("paused");
+  });
+});
 
-function playVid() {
-    alert("sadas");
-}
+const player = new Plyr('#player');
+
+console.log('test test test')

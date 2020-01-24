@@ -1,12 +1,47 @@
+// import Head from "next/head";
 import Head from "../components/head";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "../components/navbar";
+
 import { Container, Row, Col } from "react-bootstrap";
 const Index = () => (
-
   <html>
-    <head />
+    <Head />
+    {/* <div>
+      <Head>
+        <title>Login - Lifeline</title>
+        <meta charset="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+       <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"
+        ></script>
+        <script
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"
+        ></script>
+         <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+        <script src="/Js/myScript.js"></script>
+       
+      </Head>
+    </div> */}
     <body>
       <Container fluid={true} className="h100" style={{ height: "100vh" }}>
         <Row
@@ -63,21 +98,22 @@ const Index = () => (
                 <span className="lblRemember">Remember me</span>
               </label>
               <span className="lblForgot">Forgot password?</span> <br />
-              <button className="btnSignIn" onClick="playVid()">
+              <button className="btnSignIn" onClick="alert('sdsdsd')">
                 Sign In
               </button>
               <p className="pDont">
-                Don't have an account?<Link href = "/signup"><a><span>Sign Up </span></a></Link>
+                Don't have an account?
+                <Link href="/signup">
+                  <a>
+                    <span>Sign Up </span>
+                  </a>
+                </Link>
               </p>
             </div>
           </Col>
           <Col lg={8} md={8} sm={12} className="colright">
-            <div className="btn play">
-              <span className="bar bar-1"></span>
-              <span className="bar bar-2"></span>
-            </div>
             <div className="banner">
-              <video muted id="myVideo" poster="Image/ambulance.jpg">
+              <video muted id="player" playsinline controls autoPlay>
                 <source
                   src="Video/LifelineAmbulanceRescue.mp4"
                   type="video/mp4"
@@ -90,10 +126,12 @@ const Index = () => (
       </Container>
       <style jsx>{`
         @media only screen and (max-width: 511px) {
-          .btn , .colright, .banner{
+          .btn,
+          .colright,
+          .banner {
             display: none !important;
-          } 
-      }
+          }
+        }
 
         .myVideo {
           position: absolute;
@@ -312,6 +350,7 @@ const Index = () => (
         .colright {
           height: 100vh;
           background-color: black;
+          position: relative;
         }
         .banner {
           width: 100%;
@@ -332,54 +371,74 @@ const Index = () => (
         video[poster] {
           filter: brightness(50%);
         }
-        .btn {
-          position: relative;
-          width: 40px;
-          height: 40px;
-          border: white 3px solid;
-          border-radius: 3px;
-          cursor: pointer;
-          transition: border 0.1s ease-in-out;
-          z-index: 99999;
-        }
-        .btn:hover {
-          border: #333 3px solid;
-        }
-        .btn:hover .bar {
-          background-color: #333;
-        }
-        .btn .bar {
-          display: inline-block;
+        .play-button {
+          height: 80px;
+          width: 80px;
+          display: block;
+          z-index: 999999999;
+          overflow: hidden;
           position: absolute;
-          top: 10px;
-          left: 0;
-          width: 3px;
-          height: 20px;
-          border-radius: 3px;
-          background-color: white;
-          -webkit-transform-origin: center;
-                  transform-origin: center;
-          transition: background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
-          transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
-          transition: transform 0.4s ease-in-out, background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
+          bacground-color: black;
+          left: 45%;
+          top: 45%;
         }
-        .btn.pause .bar-1 {
-          -webkit-transform: translateX(13.5px) translateY(0px) rotate(0deg);
-                  transform: translateX(13.5px) translateY(0px) rotate(0deg);
+        .left {
+          height: 100%;
+          float: left;
+          background-color: #fff;
+          width: 36%;
+          -webkit-transition: all 0.25s ease;
+          transition: all 0.25s ease;
+          overflow: hidden;
         }
-        .btn.pause .bar-2 {
-          -webkit-transform: translateX(24px) translateY(0px) rotate(0deg);
-                  transform: translateX(24px) translateY(0px) rotate(0deg);
+        .triangle-1 {
+          -webkit-transform: translate(0, -100%);
+                  transform: translate(0, -100%);
         }
-        .btn.play .bar-1 {
-          -webkit-transform: translateX(20px) translateY(-5px) rotate(-55deg);
-                  transform: translateX(20px) translateY(-5px) rotate(-55deg);
+        .triangle-2 {
+          -webkit-transform: translate(0, 100%);
+                  transform: translate(0, 100%);
         }
-        .btn.play .bar-2 {
-          -webkit-transform: translateX(20px) translateY(5px) rotate(-125deg);
-                  transform: translateX(20px) translateY(5px) rotate(-125deg);
+        .triangle-1,
+        .triangle-2 {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: transparent;
+          width: 0;
+          height: 0;
+          border-right: 300px solid #c0392b;
+          border-top: 150px solid transparent;
+          border-bottom: 150px solid transparent;
+          -webkit-transition: -webkit-transform 0.25s ease;
+          transition: -webkit-transform 0.25s ease;
+          transition: transform 0.25s ease;
+          transition: transform 0.25s ease, -webkit-transform 0.25s ease;
         }
-        
+        .right {
+          height: 100%;
+          float: right;
+          width: 36%;
+          background-color: #fff;
+          -webkit-transition: all 0.25s ease;
+          transition: all 0.25s ease;
+        }
+        .paused .left {
+          width: 50%;
+        }
+        .paused .right {
+          width: 50%;
+        }
+        .paused .triangle-1 {
+          -webkit-transform: translate(0, -50%);
+                  transform: translate(0, -50%);
+        }
+        .paused .triangle-2 {
+          -webkit-transform: translate(0, 50%);
+                  transform: translate(0, 50%);
+        }
+      ]
+      
       `}</style>
     </body>
   </html>
