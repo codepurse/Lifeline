@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "../components/navbar";
 import { Container, Row, Col } from "react-bootstrap";
 const Index = () => (
-
   <html>
     <head />
     <body>
@@ -24,9 +23,7 @@ const Index = () => (
               />
             </div>
             <p className="pHello">SIGN UP</p>
-            <p className="pHelloSub">
-             Create your account in just a minute
-            </p>
+            <p className="pHelloSub">Create your account in just a minute</p>
             <div className="divEmail" style={{ marginTop: "15px" }}>
               <p className="pEmail">First Name</p>
               <input
@@ -40,7 +37,7 @@ const Index = () => (
               <input
                 type="text"
                 className="txtEmail"
-                placeholder = "Enter lastname here.."
+                placeholder="Enter lastname here.."
               />
             </div>
             <div className="divEmail" style={{ marginTop: "15px" }}>
@@ -60,9 +57,7 @@ const Index = () => (
               />
             </div>
             <div className="divFooter">
-              <button className="btnSignUp">
-                Sign In
-              </button>
+              <button className="btnSignUp">Sign In</button>
               <p className="pDont">
                 Already have an account? <span>Sign Up</span>
               </p>
@@ -86,12 +81,13 @@ const Index = () => (
         </Row>
       </Container>
       <style jsx>{`
-    @media only screen and (max-width: 511px) {
-      .btn , .colright, .banner{
-        display: none !important;
-      } 
-  }
-
+        @media only screen and (max-width: 511px) {
+          .btn,
+          .colright,
+          .banner {
+            display: none !important;
+          }
+        }
 
         .myVideo {
           position: absolute;
@@ -141,7 +137,6 @@ const Index = () => (
           color: #424242;
           font-size: 0.9rem;
           float: left;
-        
         }
         .pPassword {
           margin-top: 20px;
@@ -355,28 +350,29 @@ const Index = () => (
           border-radius: 3px;
           background-color: white;
           -webkit-transform-origin: center;
-                  transform-origin: center;
-          transition: background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
+          transform-origin: center;
+          transition: background 0.1s ease-in-out,
+            -webkit-transform 0.4s ease-in-out;
           transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
-          transition: transform 0.4s ease-in-out, background 0.1s ease-in-out, -webkit-transform 0.4s ease-in-out;
+          transition: transform 0.4s ease-in-out, background 0.1s ease-in-out,
+            -webkit-transform 0.4s ease-in-out;
         }
         .btn.pause .bar-1 {
           -webkit-transform: translateX(13.5px) translateY(0px) rotate(0deg);
-                  transform: translateX(13.5px) translateY(0px) rotate(0deg);
+          transform: translateX(13.5px) translateY(0px) rotate(0deg);
         }
         .btn.pause .bar-2 {
           -webkit-transform: translateX(24px) translateY(0px) rotate(0deg);
-                  transform: translateX(24px) translateY(0px) rotate(0deg);
+          transform: translateX(24px) translateY(0px) rotate(0deg);
         }
         .btn.play .bar-1 {
           -webkit-transform: translateX(20px) translateY(-5px) rotate(-55deg);
-                  transform: translateX(20px) translateY(-5px) rotate(-55deg);
+          transform: translateX(20px) translateY(-5px) rotate(-55deg);
         }
         .btn.play .bar-2 {
           -webkit-transform: translateX(20px) translateY(5px) rotate(-125deg);
-                  transform: translateX(20px) translateY(5px) rotate(-125deg);
+          transform: translateX(20px) translateY(5px) rotate(-125deg);
         }
-        
       `}</style>
     </body>
   </html>

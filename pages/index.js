@@ -1,47 +1,11 @@
-// import Head from "next/head";
 import Head from "../components/head";
-import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Container, Row, Col } from "react-bootstrap";
+
+const playVideo = () => document.getElementById("myVideo").play();
 const Index = () => (
   <html>
-    <Head />
-    {/* <div>
-      <Head>
-        <title>Login - Lifeline</title>
-        <meta charset="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-       <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous"
-        />
-        <script
-          src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-          crossorigin="anonymous"
-        ></script>
-        <script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-          crossorigin="anonymous"
-        ></script>
-         <script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
-        <script src="/Js/myScript.js"></script>
-       
-      </Head>
-    </div> */}
+    <head />
     <body>
       <Container fluid={true} className="h100" style={{ height: "100vh" }}>
         <Row
@@ -52,7 +16,7 @@ const Index = () => (
             justifyContent: "center"
           }}
         >
-          <Col lg={4} md={4} sm={12} className="text-center">
+          <Col lg={4} className="text-center">
             <div className="form-inline text-center">
               <img
                 src="Image/logo.png"
@@ -98,26 +62,16 @@ const Index = () => (
                 <span className="lblRemember">Remember me</span>
               </label>
               <span className="lblForgot">Forgot password?</span> <br />
-              <button className="btnSignIn" onClick="alert('sdsdsd')">
-                Sign In
-              </button>
+              <button className="btnSignIn" onClick={playVideo}>Sign In</button>
               <p className="pDont">
-                Don't have an account?
-                <Link href="/signup">
-                  <a>
-                    <span>Sign Up </span>
-                  </a>
-                </Link>
+                Don't have an account? <span>Sign Up</span>
               </p>
             </div>
           </Col>
-          <Col lg={8} md={8} sm={12} className="colright">
+          <Col lg={8} className="colright">
             <div className="banner">
-              <video muted id="player" playsinline controls autoPlay>
-                <source
-                  src="Video/LifelineAmbulanceRescue.mp4"
-                  type="video/mp4"
-                />
+              <video muted id="myVideo" poster = "Image/ambulance.jpg">
+                <source src = "Video/LifelineAmbulanceRescue.mp4" type="video/mp4" />
                 Your browser does not support HTML5 video.
               </video>
             </div>
@@ -125,14 +79,6 @@ const Index = () => (
         </Row>
       </Container>
       <style jsx>{`
-        @media only screen and (max-width: 511px) {
-          .btn,
-          .colright,
-          .banner {
-            display: none !important;
-          }
-        }
-
         .myVideo {
           position: absolute;
           right: 0;
@@ -147,7 +93,7 @@ const Index = () => (
         }
         .pHello {
           font-family: roboto, sans-serif;
-          color: rgb(230, 49, 49);
+          color: #424242;
           font-size: 2rem;
           font-weight: bold;
         }
@@ -178,10 +124,9 @@ const Index = () => (
         .pEmail,
         .pPassword {
           font-family: roboto, sans-serif;
-          color: #424242;
+          color: #9e9e9e;
           font-size: 0.9rem;
           float: left;
-          font-weight: 500;
         }
         .pPassword {
           margin-top: 20px;
@@ -293,14 +238,13 @@ const Index = () => (
           font-family: roboto, sans-serif;
           color: #424242;
           font-size: 0.9rem;
-          font-weight: 500;
         }
         .lblRemember:hover {
           color: rgb(230, 49, 49);
         }
         .lblForgot {
           font-family: roboto, sans-serif;
-          color: rgb(230, 49, 49);
+          color: #9e9e9e;
           float: right;
           font-size: 0.9rem;
           cursor: pointer;
@@ -308,7 +252,7 @@ const Index = () => (
           margin-top: 2px;
         }
         .lblForgot:hover {
-          color: rgb(230, 49, 49, 0.5);
+          color: rgb(230, 49, 49);
         }
         .btnSignIn {
           font-family: roboto, sans-serif;
@@ -318,7 +262,7 @@ const Index = () => (
           border: 0px;
           width: 350px;
           border-radius: 5px;
-          padding: 10px 10px;
+          padding: 14px 10px;
           cursor: pointer;
           transition: all 0.2s;
           margin-top: 20px;
@@ -326,11 +270,10 @@ const Index = () => (
         }
         .pDont {
           font-family: roboto, sans-serif;
-          color: #424242;
+          color: #9e9e9e;
           font-size: 0.9rem;
           cursor: pointer;
-          transition: all 0.2s;
-          margin-top: 10px;
+          margin-top: 20px;
         }
         .pDont > span {
           color: rgb(230, 49, 49);
@@ -350,16 +293,15 @@ const Index = () => (
         .colright {
           height: 100vh;
           background-color: black;
-          position: relative;
         }
         .banner {
           width: 100%;
           height: 100vh;
           overflow: hidden;
           display: flex;
-        }
-
-        .banner video {
+      }
+      
+      .banner video {
           position: absolute;
           top: 0;
           left: 0;
@@ -367,78 +309,10 @@ const Index = () => (
           width: 100%;
           height: 100%;
           pointer-events: none;
-        }
-        video[poster] {
-          filter: brightness(50%);
-        }
-        .play-button {
-          height: 80px;
-          width: 80px;
-          display: block;
-          z-index: 999999999;
-          overflow: hidden;
-          position: absolute;
-          bacground-color: black;
-          left: 45%;
-          top: 45%;
-        }
-        .left {
-          height: 100%;
-          float: left;
-          background-color: #fff;
-          width: 36%;
-          -webkit-transition: all 0.25s ease;
-          transition: all 0.25s ease;
-          overflow: hidden;
-        }
-        .triangle-1 {
-          -webkit-transform: translate(0, -100%);
-                  transform: translate(0, -100%);
-        }
-        .triangle-2 {
-          -webkit-transform: translate(0, 100%);
-                  transform: translate(0, 100%);
-        }
-        .triangle-1,
-        .triangle-2 {
-          position: absolute;
-          top: 0;
-          right: 0;
-          background-color: transparent;
-          width: 0;
-          height: 0;
-          border-right: 300px solid #c0392b;
-          border-top: 150px solid transparent;
-          border-bottom: 150px solid transparent;
-          -webkit-transition: -webkit-transform 0.25s ease;
-          transition: -webkit-transform 0.25s ease;
-          transition: transform 0.25s ease;
-          transition: transform 0.25s ease, -webkit-transform 0.25s ease;
-        }
-        .right {
-          height: 100%;
-          float: right;
-          width: 36%;
-          background-color: #fff;
-          -webkit-transition: all 0.25s ease;
-          transition: all 0.25s ease;
-        }
-        .paused .left {
-          width: 50%;
-        }
-        .paused .right {
-          width: 50%;
-        }
-        .paused .triangle-1 {
-          -webkit-transform: translate(0, -50%);
-                  transform: translate(0, -50%);
-        }
-        .paused .triangle-2 {
-          -webkit-transform: translate(0, 50%);
-                  transform: translate(0, 50%);
-        }
-      ]
-      
+      }
+      video[poster] {
+        filter: brightness(50%);
+      }
       `}</style>
     </body>
   </html>

@@ -1,0 +1,203 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.colSideMenu {
+  background-color: rgb(230, 49, 49);
+  border-right: 1px solid rgb(230, 49, 49);
+  width: 65px;
+  max-width: 65px;
+  min-width: 65px;
+  z-index: 999;
+  position: fixed;
+  left: 0px;
+  height: 100vh;
+}
+
+.imgLogoLifeline {
+  position: fixed;
+  top: 20px;
+  width: 40px;
+  filter:   brightness(0) invert(1);
+}
+
+.rowSide {
+  height: 100vh;
+}
+
+.imgProfile {
+  border-radius: 50%;
+  background-color: transparent;
+  width: 40px;
+  margin-top: 10px;
+}
+
+.imgLogo {
+  width: 20px !important;
+  margin: 0 auto;
+  margin-top: -2px;
+}
+
+.btn {
+  border: 0px;
+  transition: all 0.2s;
+  width: 42px;
+  margin-left: -5px;
+  margin-top: 20px;
+  outline: none !important;
+}
+
+.btn:hover {
+  background-color: rgb( 184, 57, 57);
+  border-radius: 8px;
+
+}
+
+.btn:hover > img {
+  filter:   brightness(0) invert(1);
+}
+
+.btnLogout {
+  position: fixed;
+  bottom: 20px;
+  left: 18px;
+}
+
+.divNav {
+  position: fixed;
+  top:0px;
+  height: 65px;
+  width: 100%;
+  border-bottom: 1px solid #ECEFF1;
+}
+
+.pTitle {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: 70px;
+  margin-top: 20px;
+}
+
+.divNav {
+  background-color: white;
+}
+
+.pGreetings {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.pName {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-top: -15px;
+}
+
+.dropdown-profile {
+  background-color: transparent !important;
+  outline: none !important;
+  background-color:#fff transparent !important; 
+}
+
+.dropdown-toggle::after {
+  color: #3b3b66 !important;
+  font-size: 1.5rem;
+}
+
+.btn:focus,.btn:active, .dropdown-profile:focus, .dropdown-profile:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.divBox {
+  border-left: 2px solid rgb( 184, 57, 57);
+  padding-left: 10px;
+}
+
+.pBoxTitle {
+  font-family: Quicksand;
+  color: #757575;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pBoxTitleResult {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: -10px;
+}
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden; }
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+    color: #efedef;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 2rem 0;
+    text-align: center; }
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,
+    .tabs [class*=" tab"] [type="radio"]:focus {
+      border-bottom: 1px solid #fd264f; }
+    .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked {
+      border-bottom: 2px solid #fd264f; }
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
+      opacity: 1; }
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
+      display: block;
+      opacity: 0;
+      padding: 2rem 0;
+      width: 90%;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .tabs .tab-2 {
+    width: 100px; }
+    .tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 200%; }
+    .tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0; }
+    .tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; }
+    .tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
