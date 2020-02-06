@@ -33,6 +33,10 @@ $(document).ready(function () {
         }
     });
 
+    $(".btnTagList").click(function(){
+        $(this).css('display', 'none');
+      });
+
     $('td').each(function () {
         var $this = $(this)
         if ($this.text() == "Pending") {

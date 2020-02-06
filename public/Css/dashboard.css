@@ -291,7 +291,7 @@ th {
 td {
   font-family: Quicksand;
   color: #3b3b66;
-  padding: 10px 10px;
+  padding: 15px 10px;
   text-align: left;
   font-weight: 500;
   border: 0px;
@@ -367,4 +367,53 @@ and also iPads specifically.
 
 .statusFailed {
   color: #ff799a !important;
+}
+
+
+
+
+/* Membership */
+
+.pNav{
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 700;
+  font-size: 1.9rem;
+}
+
+.pNumber {
+  font-family: Quicksand;
+  color: #616161;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.btnTag {
+  background-color: #FAFAFA;
+  border: 1px solid #E0E0E0;
+  padding: 5px 10px;
+}
+
+.btnTagList {
+  background-color: #3b3b66;
+  border: 1px solid #616161;
+  color: white;
+  border-radius: 5px;
+  margin-left: 5px;
+  padding: 5px 10px;
+  outline: none !important;
+  transition: all 0.2s;
+}
+
+.pSorted {
+  font-family: Quicksand;
+  color: #616161;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.pSorted > span {
+  color: #cc292f;
 }

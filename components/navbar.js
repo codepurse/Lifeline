@@ -1,29 +1,34 @@
 import Link from "next/link";
-
+import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
+import Tooltip from "react-bootstrap/Tooltip";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Navbar = () => (
-  <div className="container-fluid">
-    <nav className="navbar navbar-expand-md navbar-light">
-      <button
-        className="navbar-toggler"
-        data-toggle="collapse"
-        data-target="#collapse"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <nav className="navbar-brand" href="#">
-        <a href="#">
-          <img
-            src="/Image/logo.png" alt =""
-            className="img-fluid imglogo"
-          />
-        </a>
-      </nav>
-      <div className="collapse navbar-collapse" id="collapse">
+  <Container fluid={true} className="divNav">
+        <Row>
+          <Col lg={6}>
+            <p class="pTitle">My Dashboard</p>
+          </Col>
+          <Col lg={6}>
+            <div className="float-right form-inline">
+              <img src="Image/dp.jpeg" className="imgProfile" />
+              <span class="lblName">Alfon Labadan</span>
+              <Dropdown>
+                <Dropdown.Toggle
+                  className="dropdown-profile"
+                  id="dropdown-basic"
+                ></Dropdown.Toggle>
 
-      </div>
-    </nav>
-  </div>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Logout</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Edit Profile</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Settings</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 );
 
 export default Navbar;

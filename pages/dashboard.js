@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Tooltip from "react-bootstrap/Tooltip";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
+import Sidebar from "../components/sidebar";
+import Navbar from "../components/navbar";
 import Head from "next/head";
 
 
@@ -46,80 +48,8 @@ const dashboard = () => (
       />
     </head>
     <body>
-      <Container fluid={true} className="divNav">
-        <Row>
-          <Col lg={6}>
-            <p class="pTitle">My Dashboard</p>
-          </Col>
-          <Col lg={6}>
-            <div className="float-right form-inline">
-              <img src="Image/dp.jpeg" className="imgProfile" />
-              <span class="lblName">Alfon Labadan</span>
-              <Dropdown>
-                <Dropdown.Toggle
-                  className="dropdown-profile"
-                  id="dropdown-basic"
-                ></Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Logout</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Edit Profile</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Settings</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-
-      <Container fluid={true} className="h100 colSideMenu">
-        <Row className="h100 align-items-center rowSide justify-content-center">
-          <Col lg={12} className="text-center" style={{ position: "relative" }}>
-            <img src="Image/logo.png" className="imgLogoLifeline"></img>
-
-            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Profile</Tooltip>}>
-              <button className="btn btnProfile">
-                <img src="Image/user.png" className="imgLogo imgUser" />
-                <span>Profile</span>
-              </button>
-            </OverlayTrigger>
-
-            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Membership</Tooltip>}>
-              <button className="btn btnMembership">
-                <img src="Image/membership.png" className="imgLogo" />
-                <span>Membership</span>
-              </button>
-            </OverlayTrigger>
-
-            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Payment</Tooltip>}>
-              <button className="btn btnPayment">
-                <img src="Image/payment.png" className="imgLogo" />
-                <span>Payment</span>
-              </button>
-            </OverlayTrigger>
-
-            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Services</Tooltip>}>
-              <button className="btn btnServices">
-                <img src="Image/services.png" className="imgLogo" />
-                <span>Services</span>
-              </button>
-            </OverlayTrigger>
-
-            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Exit</Tooltip>}>
-              <button className="btn btnExit">
-                <img src="Image/logout.png" className="imgLogo" />
-                <span>Exit</span>
-              </button>
-            </OverlayTrigger>
-
-            <button className="btn btnRight">
-              <img src="Image/next.png" className="imgLogo imgRight" />
-              <span>Exit</span>
-            </button>
-          </Col>
-        </Row>
-      </Container>
-
+      <Navbar></Navbar>
+      <Sidebar></Sidebar>
       <Container fluid={true} style={{ zIndex: "-1" }}>
         <Row style={{ paddingTop: "100px" }}>
           <Col lg={12} style={{ paddingLeft: "90px" }}>
@@ -220,7 +150,7 @@ const dashboard = () => (
                     <td data-column="Referrence Code">#10254</td>
                     <td data-column="Paid Item">Group Plan 2 Years</td>
                     <td data-column="Date">May 10, 2019</td>
-                    <td data-column="Status" className="statusPending">Pending</td>
+                    <td data-column="Status">Pending</td>
                   </tr>
                   <tr>
                     <td data-column="Referrence Code">#10875</td>
