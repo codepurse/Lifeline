@@ -4,7 +4,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
 import Head from "next/head";
 
-const tooltip = <Tooltip id="tooltip">Profile</Tooltip>;
 
 const dashboard = () => (
   <div>
@@ -55,6 +54,7 @@ const dashboard = () => (
           <Col lg={6}>
             <div className="float-right form-inline">
               <img src="Image/dp.jpeg" className="imgProfile" />
+              <span class="lblName">Alfon Labadan</span>
               <Dropdown>
                 <Dropdown.Toggle
                   className="dropdown-profile"
@@ -77,28 +77,44 @@ const dashboard = () => (
           <Col lg={12} className="text-center" style={{ position: "relative" }}>
             <img src="Image/logo.png" className="imgLogoLifeline"></img>
 
-            <OverlayTrigger placement="right" overlay={tooltip}>
-              <button className="btn">
-                <img src="Image/user.png" className="imgLogo" />
+            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Profile</Tooltip>}>
+              <button className="btn btnProfile">
+                <img src="Image/user.png" className="imgLogo imgUser" />
+                <span>Profile</span>
               </button>
             </OverlayTrigger>
 
-            <OverlayTrigger placement="right" overlay={tooltip}>
-              <button className="btn">
+            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Membership</Tooltip>}>
+              <button className="btn btnMembership">
                 <img src="Image/membership.png" className="imgLogo" />
+                <span>Membership</span>
               </button>
             </OverlayTrigger>
 
-            <button className="btn">
-              <img src="Image/payment.png" className="imgLogo" />
-            </button>
+            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Payment</Tooltip>}>
+              <button className="btn btnPayment">
+                <img src="Image/payment.png" className="imgLogo" />
+                <span>Payment</span>
+              </button>
+            </OverlayTrigger>
 
-            <button className="btn">
-              <img src="Image/services.png" className="imgLogo" />
-            </button>
+            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Services</Tooltip>}>
+              <button className="btn btnServices">
+                <img src="Image/services.png" className="imgLogo" />
+                <span>Services</span>
+              </button>
+            </OverlayTrigger>
 
-            <button className="btn btnLogout">
-              <img src="Image/logout.png" className="imgLogo" />
+            <OverlayTrigger placement="right" overlay={<Tooltip id="tooltip">Exit</Tooltip>}>
+              <button className="btn btnExit">
+                <img src="Image/logout.png" className="imgLogo" />
+                <span>Exit</span>
+              </button>
+            </OverlayTrigger>
+
+            <button className="btn btnRight">
+              <img src="Image/next.png" className="imgLogo imgRight" />
+              <span>Exit</span>
             </button>
           </Col>
         </Row>
@@ -138,56 +154,146 @@ const dashboard = () => (
           </Col>
         </Row>
         <Row style={{ paddingLeft: "90px" }}  >
-          <Col lg={8}>
-            <div class="tabs">
-              <div class="tab-2">
-                <label for="tab2-1">One</label>
-                <input
-                  id="tab2-1"
-                  name="tabs-two"
-                  type="radio"
-                  checked="checked"
-                />
-                <div>
-                  <h4>Tab One</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas consequat id velit quis vestibulum. Nam id orci eu
-                    urna mollis porttitor. Nunc nisi ante, gravida at velit eu,
-                    aliquet sodales dui. Sed laoreet condimentum nisi a egestas.
-                  </p>
-                  <p>
-                    Donec interdum ante ut enim consequat, quis varius nulla
-                    dapibus. Vivamus mollis fermentum augue a varius. Vestibulum
-                    in sapien at lectus gravida lobortis vulputate sed metus.
-                    Duis scelerisque justo et maximus efficitur. Donec eu
-                    eleifend quam. Curabitur aliquet commodo sapien eget
-                    vestibulum. Vestibulum ante ipsum primis in faucibus orci
-                    luctus et ultrices posuere cubilia Curae; Vestibulum vel
-                    aliquet nunc, finibus posuere lorem. Suspendisse consectetur
-                    volutpat est ut ornare.
-                  </p>
-                </div>
-              </div>
-              <div class="tab-2">
-                <label for="tab2-2">Two</label>
-                <input id="tab2-2" name="tabs-two" type="radio" />
-                <div>
-                  <h4>Tab Two</h4>
-                  <p>
-                    Quisque sit amet turpis leo. Maecenas sed dolor mi.
-                    Pellentesque varius elit in neque ornare commodo ac non
-                    tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi
-                    tristique lorem eget iaculis consectetur. Class aptent
-                    taciti sociosqu ad litora torquent per conubia nostra, per
-                    inceptos himenaeos. Aenean at tellus eget risus tempus
-                    ultrices. Nam condimentum nisi enim, scelerisque faucibus
-                    lectus sodales at.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Col>
+          <main>
+            <input id="tab1" type="radio" name="tabs" defaultChecked />
+            <label htmlFor="tab1">Membership</label>
+            <input id="tab2" type="radio" name="tabs" />
+            <label htmlFor="tab2">Payments</label>
+            <input id="tab3" type="radio" name="tabs" />
+            <label htmlFor="tab3">Services</label>
+            <section id="content1">
+              <table >
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Mobile Number</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-column="First Name">James</td>
+                    <td data-column="Last Name">Matman</td>
+                    <td data-column="Email">jamesmathan@gmail.com</td>
+                    <td data-column="Number">09568795845</td>
+                  </tr>
+                  <tr>
+                    <td data-column="First Name">Andor</td>
+                    <td data-column="Last Name">Nagy</td>
+                    <td data-column="Email">andor12nagy@ymail.com</td>
+                    <td data-column="Number">09425783215</td>
+                  </tr>
+                  <tr>
+                    <td data-column="First Name">Tamas</td>
+                    <td data-column="Last Name">Biro</td>
+                    <td data-column="Email">birotamas@hotmail.com</td>
+                    <td data-column="Number">09421578962</td>
+                  </tr>
+                  <tr>
+                    <td data-column="First Name">Zoli</td>
+                    <td data-column="Last Name">Mastah</td>
+                    <td data-column="Email">mastah@gmail.com</td>
+                    <td data-column="Number">09871546987</td>
+                  </tr>
+                  <tr>
+                    <td data-column="First Name">Szabi</td>
+                    <td data-column="Last Name">Nagy</td>
+                    <td data-column="Email">Szabinagy@ymail.com</td>
+                    <td data-column="Number">09254987853</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section id="content2">
+              <table id="myTable">
+                <thead>
+                  <tr>
+                    <th>Reference Code</th>
+                    <th>Paid Item</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-column="Referrence Code">#10254</td>
+                    <td data-column="Paid Item">Group Plan 2 Years</td>
+                    <td data-column="Date">May 10, 2019</td>
+                    <td data-column="Status" className="statusPending">Pending</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Referrence Code">#10875</td>
+                    <td data-column="Paid Item">Invidual Plan 2 Years</td>
+                    <td data-column="Date">January 12, 2019</td>
+                    <td data-column="Status">Paid</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Referrence Code">#10575</td>
+                    <td data-column="Paid Item">Invidual Plan 2 Years</td>
+                    <td data-column="Date">June 14, 2019</td>
+                    <td data-column="Status">Failed</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Referrence Code">#10217</td>
+                    <td data-column="Paid Item">Group Plan 2 Years</td>
+                    <td data-column="Date">December 1, 2018</td>
+                    <td data-column="Status">Pending</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Referrence Code">#10423</td>
+                    <td data-column="Paid Item">Group Plan 2 Years</td>
+                    <td data-column="Date">March 20, 2019</td>
+                    <td data-column="Status">Paid</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section id="content3">
+              <table id="myTable">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Items</th>
+                    <th>Book Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-column="Full Name">Alfon Labadan</td>
+                    <td data-column="Items">Booking - Doctor on Call</td>
+                    <td data-column="Date">June 12, 2019</td>
+                    <td data-column="Status">Paid</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Full Name">Eskye Custodio</td>
+                    <td data-column="Items">Booking - Doctor on Call</td>
+                    <td data-column="Date">May 10, 2019</td>
+                    <td data-column="Status">Failed</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Full Name">Nathan Nakar</td>
+                    <td data-column="Items">Booking - Book A MedTech, Book A Nurse</td>
+                    <td data-column="Date">February 20, 2019</td>
+                    <td data-column="Status">Paid</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Full Name">Randolph Yu</td>
+                    <td data-column="Items">Booking - Book A MedTech, Book A Nurse</td>
+                    <td data-column="Date">November 22, 2019</td>
+                    <td data-column="Status">Failed</td>
+                  </tr>
+                  <tr>
+                    <td data-column="Full Name">Leo Sanico</td>
+                    <td data-column="Items">Group Plan 2 Years</td>
+                    <td data-column="Date">May 10, 2019</td>
+                    <td data-column="Status">Pending</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </main>
         </Row>
       </Container>
     </body>
