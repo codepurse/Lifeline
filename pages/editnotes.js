@@ -54,11 +54,19 @@ const editnotes = () => {
             <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }}>
                 <Row style={{ paddingTop: "100px" }}>
                     <Col lg={6}>
-                        
+                        <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip">Delete</Tooltip>}>
+                            <button className="btnNotes1 btnBack float-left"><img src="Image/back.png" className="img-fluid" style={{ width: "17px" }}></img></button>
+                        </OverlayTrigger>
+                        <span className="pAllNotes">All Notes</span>
+
                     </Col>
                     <Col lg={6}>
-                        <button className="btnDelete float-right"><img src="Image/trash.png" className="img-fluid" style={{ width: "20px" }}></img></button>
-                        <button className="btnDelete float-right"><img src="Image/trash.png" className="img-fluid" style={{ width: "20px" }}></img></button>
+                        <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip">Delete</Tooltip>}>
+                            <button className="btnNotes1 btnDelete float-right"><img src="Image/trash.png" className="img-fluid" style={{ width: "17px" }}></img></button>
+                        </OverlayTrigger>
+                        <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip">Add Notes</Tooltip>}>
+                            <button className="btnNotes1 btnAddNotes float-right"><img src="Image/plus.png" className="img-fluid" style={{ width: "17px" }}></img></button>
+                        </OverlayTrigger>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "20px" }}>
