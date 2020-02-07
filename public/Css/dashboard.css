@@ -434,6 +434,15 @@ and also iPads specifically.
   transition: all 0.2s;
 }
 
+.card {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  border: 2px solid #cc292f;
+}
+
 
 .card-body {
   padding-bottom: 0px;
