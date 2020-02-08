@@ -14,6 +14,12 @@ $(document).ready(function () {
             $('.btnExit > span').css('display', 'none');
             $('.btnRight').css('left', '50px');
             $('.btnRight').css('transform', 'none');
+            $('.btnDashboard').css('left', '50px');
+            $('.btnDashboard').css('width', '45px');
+            $('.btnDashboard > span').css('display', 'none');
+            $('.btnNotes').css('left', '50px');
+            $('.btnNotes').css('width', '45px');
+            $('.btnNotes > span').css('display', 'none');
         }
         else {
             $('.colSideMenu').css('width', '175px');
@@ -30,23 +36,56 @@ $(document).ready(function () {
             $('.btnExit').css('width', '150px');
             $('.btnRight').css('left', '160px');
             $('.btnRight').css('transform', 'rotate(180deg)');
+            $('.btnDashboard').css('width', '150px');
+            $('.btnDashboard > span').css('display', 'inline');
+            $('.btnNotes').css('width', '150px');
+            $('.btnNotes > span').css('display', 'inline');
         }
     });
 
-    $(".btnTagList").click(function(){
+    $(".btnTagList").click(function () {
         $(this).css('display', 'none');
-      });
-
-    $('td').each(function () {
-        var $this = $(this)
-        if ($this.text() == "Pending") {
-            $this.addClass('statusPending');
-        }
-        else if ($this.text() == "Paid") {
-            $this.addClass('statusPaid');
-        }
-        else if ($this.text() == "Failed") {
-            $this.addClass('statusFailed');
-        }
     });
+
+
+
+    $('.btnPaid').click(function () {
+        $('table tr td:nth-child(4)').each(function () {
+            $(this).text() == 'Paid' && $(this).parent().find('td').css('display', 'none');
+        });
+    });
+
+    $('.btnPending').click(function () {
+        $('table tr td:nth-child(4)').each(function () {
+            $(this).text() == 'Pending' && $(this).parent().find('td').css('display', 'none');
+        });
+    });
+
+    $('.btnFailed').click(function () {
+        $('table tr td:nth-child(4)').each(function () {
+            $(this).text() == 'Failed' && $(this).parent().find('td').css('display', 'none');
+        });
+    });
+
+    $('.btnMembershipCard').click(function () {
+        $('.card-deck > .card > .card-body > .pCardTag').each(function () {
+            $(this).text() == 'Membership' && $(this).closest('.card').remove();
+        });
+    });
+
+    $('.btnServicesCard').click(function () {
+        $('.card-deck > .card > .card-body > .pCardTag').each(function () {
+            $(this).text() == 'Services' && $(this).closest('.card').remove();
+        });
+    });
+
+    $('.btnPaymentsCard').click(function () {
+        $('.card-deck > .card > .card-body > .pCardTag').each(function () {
+            $(this).text() == 'Payments' && $(this).closest('.card').remove();
+        });
+    });
+
+
+    var rowCount = $('#myTable tr').length;
+    $('.pNumber').html(rowCount +" "+"entries");
 });
