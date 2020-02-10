@@ -8,11 +8,29 @@ import Head from "next/head";
 import { statusColorTag } from '../utils/layout';
 
 const notes = () => {
-    const card = [{ 'tag': 'Membership', 'title': 'Payment Process', 'text': ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'date': 'July 12, 2019' },
+    const card = [{ 'tag': 'Membership', 'title': 'Payment Process', 'text': ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.t ut labore et dolore magna aliqua.', 'date': 'July 12, 2019' },
     { 'tag': 'Services', 'title': 'Payment Process', 'text': ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'date': 'May 17, 2019' },
     { 'tag': 'Payments', 'title': 'Payment Process', 'text': ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'date': 'january 9, 2019' },
     { 'tag': 'Payments', 'title': 'Payment Process', 'text': ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'date': 'january 9, 2019' },
     { 'tag': 'Membership', 'title': 'Payment Process', 'text': ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'date': 'December 5, 2019' }, { 'tag': 'Services', 'title': 'Payment Process', 'text': ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'date': 'December 5, 2019' }]
+
+    function deleteMembership() {
+        $('.card-deck > .card > .card-body > .pCardTag').each(function () {
+            $(this).text() == "Membership" && $(this).closest('.card').remove();
+        });
+    }
+    
+    function deleteServices() {
+        $('.card-deck > .card > .card-body > .pCardTag').each(function () {
+            $(this).text() == "Services" && $(this).closest('.card').remove();
+        });
+    }
+    
+    function deletePayments() {
+        $('.card-deck > .card > .card-body > .pCardTag').each(function () {
+            $(this).text() == "Payments" && $(this).closest('.card').remove();
+        });
+    }
 
     return (
         <div>
@@ -76,21 +94,21 @@ const notes = () => {
                                 style={{ width: "15px" }}
                             ></img>
                         </button>
-                        <button className="btnTagList btnMembershipCard">
+                        <button className="btnTagList btnMembershipCard" onClick = {deleteMembership}>
                             Membership
             <img
                                 src="Image/close.png"
                                 style={{ width: "10px", marginLeft: "10px" }}
                             ></img>
                         </button>
-                        <button className="btnTagList btnPaymentsCard">
+                        <button className="btnTagList btnPaymentsCard" onClick = {deletePayments}>
                             Payments
             <img
                                 src="Image/close.png"
                                 style={{ width: "10px", marginLeft: "10px" }}
                             ></img>
                         </button>
-                        <button className="btnTagList btnServicesCard">
+                        <button className="btnTagList btnServicesCard" onClick = {deleteServices}>
                             Services
             <img
                                 src="Image/close.png"

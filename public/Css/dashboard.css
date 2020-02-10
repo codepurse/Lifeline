@@ -477,6 +477,12 @@ and also iPads specifically.
   color: #616161;
   font-size: 0.8rem;
   font-weight: 500;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pDateCard {
@@ -679,4 +685,33 @@ textarea {
 
 .close {
   display: none;
+}
+
+.colModal {
+  width: auto;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 10px;
+}
+
+.colModal:hover {
+  box-shadow: 0 2px 16px -6px #212121 !important;
+}
+
+.pChoose {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.colModal>img {
+  padding: 20px 20px;
+}
+
+.txtTitle {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-size: 1.5rem;
+  font-weight: 700;
 }

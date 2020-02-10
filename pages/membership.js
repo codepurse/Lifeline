@@ -16,6 +16,8 @@ const membership = () => {
   { 'name': 'Eskye Custodio', 'items': 'Membership - Group Plan 1 Year', 'date': 'March 22, 2019', status: 'Failed' },
   { 'name': 'Leo Sanico', 'items': 'Membership - Individual Plan 1 Year', 'date': 'December 20, 2020', status: 'Pending' }]
 
+  
+
   return (
     <div>
       <head>
@@ -174,9 +176,22 @@ const membership = () => {
       <Modal show={show}
         onHide={() => setShow(false)}>
         <Modal.Header closeButton className="text-center d-block">
-          <Modal.Title>Choose</Modal.Title>
+          <Modal.Title>Choose Option</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="text-center">Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body className="text-center">
+          <Container fluid={true}>
+            <Row>
+              <Col lg={6} className="colModal">
+                <img src="Image/team(3).png" className="img-fluid"></img>
+                <p className="pChoose">Individual</p>
+              </Col>
+              <Col lg={6} className="colModal">
+                <img src="Image/boss.png" className="img-fluid" style={{ width: "115px", marginTop: "10px" }}></img>
+                <p className="pChoose" style={{ marginTop: "10px" }}>Group</p>
+              </Col>
+            </Row>
+          </Container>
+        </Modal.Body>
       </Modal>
 
     </div>
