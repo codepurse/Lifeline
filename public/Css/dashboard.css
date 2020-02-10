@@ -3,6 +3,16 @@ body, html {
   width: 100%;
   background-color: white;
   overflow-x: hidden;
+  animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .colSideMenu {
@@ -443,7 +453,6 @@ and also iPads specifically.
   border: 2px solid #cc292f;
 }
 
-
 .card-body {
   padding-bottom: 0px;
 }
@@ -521,18 +530,17 @@ and also iPads specifically.
   transition: all 0.2s;
 }
 
-.btnNotes1:hover  {
+.btnNotes1:hover {
   background-color: white;
 }
 
-.btnNotes1:hover > img {
+.btnNotes1:hover>img {
   filter: brightness(1) invert(1);
 }
 
 .btnBack {
   margin-top: -5px;
 }
-
 
 .pTitleNotes {
   font-family: Quicksand;
@@ -549,14 +557,19 @@ and also iPads specifically.
   margin-right: 5px;
 }
 
+.rowTextarea {
+  padding-right: 20px;
+}
+
 textarea {
   font-family: Quicksand;
   color: #424242;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   border: 0px;
   width: 100%;
   height: 67vh;
+  white-space: pre-wrap;
 }
 
 .pAllNotes {
@@ -566,4 +579,104 @@ textarea {
   cursor: pointer;
   transition: all 0.2;
   font-weight: 500;
+}
+
+.imgProfilePic {
+  width: 70px;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 16px -6px #212121 !important;
+}
+
+.pNameProfile {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.pEmail {
+  font-family: Quicksand;
+  color: #616161;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: -15px;
+  margin-left: 5px;
+}
+
+.pStatus {
+  font-family: Quicksand;
+  color: #cc292f;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: rgb(204, 41, 47, 0.1);
+  width: max-content;
+  padding: 2px 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.rowProfile {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pHeaderProfile {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.hrProfile {
+  background-color: white !important;
+}
+
+.pTitleProfile {
+  font-family: Quicksand;
+  color: #616161;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pTitleResult {
+  font-family: Quicksand;
+  color: #616161;
+  font-size: 0.9rem;
+}
+
+.pStatusProfile {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+}
+
+.modal-header {
+  border: 0px !important;
+}
+
+.modal {
+  border: 0px;
+}
+
+.modal-title {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 700;
+  font-size: 1.4rem;
+  border: 0px;
+}
+
+.close {
+  display: none;
 }

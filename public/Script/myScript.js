@@ -23,7 +23,7 @@ $(document).ready(function () {
         }
         else {
             $('.colSideMenu').css('width', '175px');
-            $('.colSideMenu').css('box-shadow', '0 2px 16px -6px #cc292f !important');
+            $('.colSideMenu').css('box-shadow', '0 2px 20px -6px #cc292f !important');
             $('.btnProfile').css('width', '150px');
             $('.btnProfile > span').css('display', 'inline');
             $('.btnMembership > span').css('display', 'inline');
