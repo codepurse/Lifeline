@@ -59,13 +59,16 @@ const addnotes = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg = {12}>
-                        <input type = "text" name = "name"/>
+                    <Col lg={12}>
+                        <div className="awesome" style={{ border: '1px solid red' }}>
+                            <label htmlFor="name">Enter your name: </label>
+                            <input type="text" id="name" />
+                        </div>
                     </Col>
                 </Row>
             </Container>
         </div>
-            )
-        };
-        
-        export default addnotes;
+    )
+};
+
+export default addnotes;
