@@ -285,15 +285,15 @@ label:before {
 }
 
 label[for*='1']:before {
-  content: '';
+  content: '\02617';
 }
 
 label[for*='2']:before {
-  content: '';
+  content: '\020B1';
 }
 
 label[for*='3']:before {
-  content: '';
+  content: '\0260D';
 }
 
 label:hover {

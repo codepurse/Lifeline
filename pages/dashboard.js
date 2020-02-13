@@ -88,6 +88,7 @@ const dashboard = () => (
         <Row className="rowTable" style={{ paddingLeft: "20px" }}>
           <main>
             <input id="tab1" type="radio" name="tabs" defaultChecked />
+           
             <label htmlFor="tab1">Membership</label>
             <input id="tab2" type="radio" name="tabs" />
             <label htmlFor="tab2">Payments</label>
