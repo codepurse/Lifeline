@@ -4,6 +4,7 @@ import { Container, Row, Col, OverlayTrigger, Tooltip, Dropdown, Modal, Button }
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import Head from "next/head";
+import Bottom from "../components/bottom";
 import { statusColor } from '../utils/layout'
 
 
@@ -60,10 +61,10 @@ const membership = () => {
       </head>
       <Navbar></Navbar>
       <Sidebar></Sidebar>
-      <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }}>
+      <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className = "colMain">
         <Row style={{ paddingTop: "100px" }}>
           <Col lg={6}>
-            <p className="pNav">
+            <p className="pNav pNav1">
               Membership<span className="pNumber">56 entries</span>
             </p>
           </Col>
@@ -71,7 +72,7 @@ const membership = () => {
             <button className="float-right btnAdd" onClick={handleShow}>&#x2b;&nbsp;Add Membership</button>
           </Col>
         </Row>
-        <Row style={{ marginTop: "-10px" }}>
+        <Row style={{ marginTop: "-10px" }} className = "rowTag">
           <Col lg={6}>
             <button className="btnTag">
               <img
@@ -108,8 +109,8 @@ const membership = () => {
             </p>
           </Col>
         </Row>
-        <Row style={{ marginTop: "40px" }}>
-          <Col lg={12}>
+        <Row style={{ marginTop: "40px" }} >
+          <Col lg={12} className = "colTable">
             <table id="myTable">
               <thead>
                 <tr>
@@ -169,7 +170,7 @@ const membership = () => {
           </Col>
         </Row>
       </Container>
-
+      <Bottom></Bottom>
 
       {/* Modal */}
 
