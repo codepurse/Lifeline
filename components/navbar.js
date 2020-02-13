@@ -6,10 +6,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 const Navbar = () => (
   <Container fluid={true} className="divNav">
         <Row>
-          <Col lg={6}>
+          <Col lg={6} md = {6} sm = {6} xs = {6}>
             <p class="pTitle">My Dashboard</p>
           </Col>
-          <Col lg={6}>
+          <Col lg={6} md = {6} sm = {6} xs = {6}>
             <div className="float-right form-inline">
               <img src="Image/dp.jpeg" className="imgProfile" />
               <span class="lblName">Alfon Labadan</span>

@@ -56,7 +56,7 @@ const profile = () => {
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "10px" }}>
-                    <Col lg={1} >
+                    <Col lg={1}>
                         <img src="Image/dp.jpeg" className="img-fluid imgProfilePic"></img>
                     </Col>
                     <Col lg={11}>
@@ -80,53 +80,118 @@ const profile = () => {
                         <img src="Image/marker.png" className="img-fluid float-right" style={{ width: "20px", marginTop: "-10px" }}></img>
                     </Col>
                 </Row>
-                <Row style = {{marginTop: "-10px"}}>
+                <Row style={{ marginTop: "-10px" }}>
                     <Col lg={12}>
                         <hr className="hrProfile"></hr>
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={2}>
-                        <p className="pTitleProfile">Status</p>
+                    <Col lg={6}>
+                        <Row>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Status</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult"><span className="pStatusProfile">Active</span>- Your account will be deactivate on January 12, 2019</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Street</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">Luxembroug Street</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">City</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">Imus City</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">State</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">Cavite</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Country</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">Philippines</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Email</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">alfonlabadan@gmail.com</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Contact Number</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">09556448544</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Civil Status</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">Single</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Blood Type</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">A</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Nationality</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">Filipino</p>
+                            </Col>
+                            <Col lg={3}>
+                                <p className="pTitleProfile">Gender</p>
+                            </Col>
+                            <Col lg={9}>
+                                <p className="pTitleResult">Male</p>
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col lg={10}>
-                        <p className="pTitleResult"><span className="pStatusProfile">Active</span>- Your accunt will be deactivate on January 12, 2019</p>
-                    </Col>
-                    <Col lg={2}>
-                        <p className="pTitleProfile">Street</p>
-                    </Col>
-                    <Col lg={10}>
-                        <p className="pTitleResult">Luxembroug Street</p>
-                    </Col>
-                    <Col lg={2}>
-                        <p className="pTitleProfile">City</p>
-                    </Col>
-                    <Col lg={10}>
-                        <p className="pTitleResult">Imus City</p>
-                    </Col>
-                    <Col lg={2}>
-                        <p className="pTitleProfile">State</p>
-                    </Col>
-                    <Col lg={10}>
-                        <p className="pTitleResult">Cavite</p>
-                    </Col>
-                    <Col lg={2}>
-                        <p className="pTitleProfile">Country</p>
-                    </Col>
-                    <Col lg={10}>
-                        <p className="pTitleResult">Philippines</p>
-                    </Col>
-                    <Col lg={2}>
-                        <p className="pTitleProfile">Email</p>
-                    </Col>
-                    <Col lg={10}>
-                        <p className="pTitleResult">alfonlabadan@gmail.com</p>
-                    </Col>
-                    <Col lg={2}>
-                        <p className="pTitleProfile">Contact Number</p>
-                    </Col>
-                    <Col lg={10}>
-                        <p className="pTitleResult">09556448544</p>
+                    <Col lg={6}>
+                        <Row>
+                            <Col lg={12}>
+                                <p className="pAllergies">Allergies / Allergens</p>
+                                <ul>
+                                    <li className="pAllergens">
+                                        Dust
+                                    </li>
+                                    <li className="pAllergens">
+                                        Pollen
+                                    </li>
+                                    <li className="pAllergens">
+                                        Insect Stings
+                                    </li>
+                                </ul>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg={12}>
+                                <p className="pAllergies">Disease prevalent in the family</p>
+                                <ul>
+                                    <li className="pAllergens">
+                                       HPN
+                                    </li>
+                                    <li className="pAllergens">
+                                        Diabetic Mellitus
+                                    </li>
+                                    <li className="pAllergens">
+                                        Allergy
+                                    </li>
+                                    <li className="pAllergens">
+                                        Heart Disease
+                                    </li>
+                                </ul>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>

@@ -4,6 +4,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
+import Bottom from "../components/bottom";
 import Head from "next/head";
 
 
@@ -50,40 +51,41 @@ const dashboard = () => (
     <body>
       <Navbar></Navbar>
       <Sidebar></Sidebar>
-      <Container fluid={true} style={{ zIndex: "-1" }}>
+      <bottom></bottom>
+      <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className="colMain">
         <Row style={{ paddingTop: "100px" }}>
-          <Col lg={12} style={{ paddingLeft: "90px" }}>
+          <Col lg={12}>
             <p className="pGreetings">Good morning</p>
             <p className="pName">Alfon Labadan!</p>
           </Col>
         </Row>
-        <Row style={{ marginTop: "10px", paddingLeft: "75px" }}>
-          <Col lg={3}>
+        <Row style={{ marginTop: "10px" }}>
+          <Col lg={3} md={6} sm={6}>
             <div className="divBox">
               <p className="pBoxTitle">Membership History</p>
               <p className="pBoxTitleResult">101 Membership History</p>
             </div>
           </Col>
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={6}>
             <div className="divBox">
               <p className="pBoxTitle">Payment History</p>
               <p className="pBoxTitleResult">20 Payment History</p>
             </div>
           </Col>
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={6}>
             <div className="divBox">
               <p className="pBoxTitle">Services</p>
               <p className="pBoxTitleResult">20 Services</p>
             </div>
           </Col>
-          <Col lg={3}>
+          <Col lg={3} md={6} sm={6}>
             <div className="divBox">
               <p className="pBoxTitle">Profile</p>
               <p className="pBoxTitleResult">12.10.20 Last Edit</p>
             </div>
           </Col>
         </Row>
-        <Row style={{ paddingLeft: "90px" }}  >
+        <Row className="rowTable" style={{ paddingLeft: "20px" }}>
           <main>
             <input id="tab1" type="radio" name="tabs" defaultChecked />
             <label htmlFor="tab1">Membership</label>
@@ -92,7 +94,7 @@ const dashboard = () => (
             <input id="tab3" type="radio" name="tabs" />
             <label htmlFor="tab3">Services</label>
             <section id="content1">
-              <table >
+              <table>
                 <thead>
                   <tr>
                     <th>First Name</th>
@@ -226,6 +228,7 @@ const dashboard = () => (
           </main>
         </Row>
       </Container>
+      <Bottom></Bottom>
     </body>
   </div>
 );
