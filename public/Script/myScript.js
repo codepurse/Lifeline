@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".btnRight").click(function () {
-        
+
     });
 
     $(".btnTagList").click(function () {
@@ -29,5 +29,20 @@ $(document).ready(function () {
 
 
     var rowCount = $('#myTable tr').length;
-    $('.pNumber').html(rowCount +" "+"entries");
+    $('.pNumber').html(rowCount + " " + "entries");
+
+
 });
+
+jQuery(window).resize(function () {
+    var screen = $(window)
+    if (screen.width < 510) {
+        $(".pNameProfile").css('display','block');
+    }
+    else {
+        $(".divNameStatus").addClass("form-inline");
+    }
+});
+
+
+

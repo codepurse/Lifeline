@@ -4,9 +4,11 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
+import Bottom from "../components/bottom";
 import Head from "next/head";
 
 const profile = () => {
+
     return (
         <div>
             <head>
@@ -49,35 +51,35 @@ const profile = () => {
             </head>
             <Sidebar></Sidebar>
             <Navbar></Navbar>
-            <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }}>
+            <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className="colMain colProfile">
                 <Row style={{ paddingTop: "100px" }}>
                     <Col lg={12}>
                         <p className="pNav">Profile</p>
                     </Col>
                 </Row>
-                <Row style={{ marginTop: "10px" }}>
+                <Row style={{ marginTop: "10px" }} className="rowProfile">
                     <Col lg={1}>
                         <img src="Image/dp.jpeg" className="img-fluid imgProfilePic"></img>
                     </Col>
                     <Col lg={11}>
-                        <div className="form-inline">
+                        <div className="form-inline divNameStatus">
                             <p className="pNameProfile">Alfon Labadan</p>
                             <p className="pStatus">Active</p>
                         </div>
-                        <div className="form-inline">
-                            <span><img src="Image/mail.png" className="img-fluid" style={{ width: "15px", marginTop: "-35px" }}></img></span>
+                        <div className="form-inline divNameStatus">
+                            <span className = "spanEmail"><img src="Image/mail.png" className="img-fluid imgStatus" style={{ width: "15px", marginTop: "-35px" }}></img></span>
                             <p className="pEmail">alfonlabadan@gmail.com</p>
-                            <span style={{ marginLeft: "20px" }}><img src="Image/phone.png" className="img-fluid" style={{ width: "14px", marginTop: "-35px" }}></img></span>
+                            <span style={{ marginLeft: "20px" }}><img src="Image/phone.png" className="img-fluid imgStatus" style={{ width: "14px", marginTop: "-35px" }}></img></span>
                             <p className="pEmail">095854595852</p>
                         </div>
                     </Col>
                 </Row>
                 <Row className="rowProfile">
-                    <Col lg={6}>
+                    <Col lg={6} md={6} sm={6} xs={6}>
                         <p className="pHeaderProfile">Information</p>
                     </Col>
-                    <Col lg={6}>
-                        <img src="Image/marker.png" className="img-fluid float-right" style={{ width: "20px", marginTop: "-10px" }}></img>
+                    <Col lg={6} mc={6} sm={6} xs={6}>
+                        <img src="Image/marker.png" className="img-fluid float-right imgEdit" style={{ width: "20px", marginTop: "-10px" }}></img>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "-10px" }}>
@@ -88,70 +90,70 @@ const profile = () => {
                 <Row>
                     <Col lg={6}>
                         <Row>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Status</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult"><span className="pStatusProfile">Active</span>- Your account will be deactivate on January 12, 2019</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Street</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">Luxembroug Street</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">City</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">Imus City</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">State</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">Cavite</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Country</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">Philippines</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Email</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">alfonlabadan@gmail.com</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Contact Number</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">09556448544</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Civil Status</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">Single</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Blood Type</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">A</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Nationality</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">Filipino</p>
                             </Col>
-                            <Col lg={3}>
+                            <Col lg={3} xs={3}>
                                 <p className="pTitleProfile">Gender</p>
                             </Col>
-                            <Col lg={9}>
+                            <Col lg={9} xs={9}>
                                 <p className="pTitleResult">Male</p>
                             </Col>
                         </Row>
@@ -178,7 +180,7 @@ const profile = () => {
                                 <p className="pAllergies">Disease prevalent in the family</p>
                                 <ul>
                                     <li className="pAllergens">
-                                       HPN
+                                        HPN
                                     </li>
                                     <li className="pAllergens">
                                         Diabetic Mellitus
@@ -195,6 +197,7 @@ const profile = () => {
                     </Col>
                 </Row>
             </Container>
+            <Bottom></Bottom>
         </div>
     )
 };
