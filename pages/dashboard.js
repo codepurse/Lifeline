@@ -60,28 +60,28 @@ const dashboard = () => (
           </Col>
         </Row>
         <Row style={{ marginTop: "10px" }}>
-          <Col lg={3} md={6} sm={6}>
+          <Col lg={3} md={6} sm={6} xs = {6}>
             <div className="divBox">
               <p className="pBoxTitle">Membership History</p>
-              <p className="pBoxTitleResult">101 Membership History</p>
+              <p className="pBoxTitleResult"><span>101</span> Membership History</p>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6}>
+          <Col lg={3} md={6} sm={6} xs = {6}>
             <div className="divBox">
               <p className="pBoxTitle">Payment History</p>
-              <p className="pBoxTitleResult">20 Payment History</p>
+              <p className="pBoxTitleResult"><span>20</span> Payment History</p>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6}>
+          <Col lg={3} md={6} sm={6} xs = {6}>
             <div className="divBox">
               <p className="pBoxTitle">Services</p>
-              <p className="pBoxTitleResult">20 Services</p>
+              <p className="pBoxTitleResult"><span>20</span> Services</p>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6}>
+          <Col lg={3} md={6} sm={6} xs = {6}>
             <div className="divBox">
               <p className="pBoxTitle">Profile</p>
-              <p className="pBoxTitleResult">12.10.20 Last Edit</p>
+              <p className="pBoxTitleResult"><span>12.11.19</span> Last Edit</p>
             </div>
           </Col>
         </Row>

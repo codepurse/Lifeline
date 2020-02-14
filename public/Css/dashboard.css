@@ -62,6 +62,22 @@ body, html {
     float: left !important;
     margin-top: 15px !important;
   }
+  .pBoxTitle {
+    display: none !important;
+  }
+
+  .pBoxTitleResult {
+    font-size: 1rem !important;
+  }
+
+  .pBoxTitleResult > span {
+    display: block !important;
+    font-size: 1.4rem;
+  }
+
+  th {
+    color: #3b3b66 !important;
+  }
 }
 
 .colSideMenu {
@@ -293,7 +309,7 @@ label[for*='2']:before {
 }
 
 label[for*='3']:before {
-  content: '\0260D';
+  content: '\02752';
 }
 
 label:hover {
@@ -412,7 +428,7 @@ and also iPads specifically.
     white-space: nowrap;
     /* Label the data */
     content: attr(data-column);
-    color: #000;
+    color: #3b3b66;
     font-weight: bold;
   }
 }
