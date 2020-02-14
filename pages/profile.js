@@ -49,6 +49,7 @@ const profile = () => {
                     href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap"
                     rel="stylesheet"
                 />
+                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"></link>
             </head>
             <Loader></Loader>
             <Sidebar></Sidebar>
