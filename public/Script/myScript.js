@@ -37,10 +37,9 @@ $(document).ready(function () {
 window.onload = function () {
     const element = document.querySelector('#load')
     element.classList.add('animated', 'fadeOut')
-    
+    $('loader').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
 }
 
-$('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
 
 
 

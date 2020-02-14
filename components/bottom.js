@@ -10,12 +10,14 @@ const Bottom = () => (
                 </Link>
             </Col>
             <Col xs={3}>
-                <Link href="/profile">
+            <Link href="/profile">
                     <img src="Image/user.png" className="imgLogo" />
                 </Link>
             </Col>
                 <Col xs={3}>
+                <Link href="/membership">
                     <img src="Image/membership.png" className="imgLogo" />
+                </Link>
                 </Col>
                 <Col xs={3}>
                     <img src="Image/payment.png" className="imgLogo" />
