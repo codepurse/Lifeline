@@ -5,6 +5,7 @@ import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import Head from "next/head";
 import Bottom from "../components/bottom";
+import Loader from "../components/loader";
 import { statusColor } from '../utils/layout'
 
 
@@ -59,6 +60,7 @@ const membership = () => {
           rel="stylesheet"
         />
       </head>
+      <Loader></Loader>
       <Navbar></Navbar>
       <Sidebar></Sidebar>
       <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className = "colMain">

@@ -5,6 +5,7 @@ import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import Bottom from "../components/bottom";
+import Loader from "../components/loader";
 import Head from "next/head";
 
 const profile = () => {
@@ -49,6 +50,7 @@ const profile = () => {
                     rel="stylesheet"
                 />
             </head>
+            <Loader></Loader>
             <Sidebar></Sidebar>
             <Navbar></Navbar>
             <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className="colMain colProfile">

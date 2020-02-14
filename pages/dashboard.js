@@ -5,6 +5,7 @@ import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import Bottom from "../components/bottom";
+import Loader from "../components/loader";
 import Head from "next/head";
 
 
@@ -47,8 +48,10 @@ const dashboard = () => (
         href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap"
         rel="stylesheet"
       />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"></link>
     </head>
     <body>
+      <Loader></Loader>
       <Navbar></Navbar>
       <Sidebar></Sidebar>
       <bottom></bottom>
@@ -60,25 +63,25 @@ const dashboard = () => (
           </Col>
         </Row>
         <Row style={{ marginTop: "10px" }}>
-          <Col lg={3} md={6} sm={6} xs = {6}>
+          <Col lg={3} md={6} sm={6} xs={6}>
             <div className="divBox">
               <p className="pBoxTitle">Membership History</p>
               <p className="pBoxTitleResult"><span>101</span> Membership History</p>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6} xs = {6}>
+          <Col lg={3} md={6} sm={6} xs={6}>
             <div className="divBox">
               <p className="pBoxTitle">Payment History</p>
               <p className="pBoxTitleResult"><span>20</span> Payment History</p>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6} xs = {6}>
+          <Col lg={3} md={6} sm={6} xs={6}>
             <div className="divBox">
               <p className="pBoxTitle">Services</p>
               <p className="pBoxTitleResult"><span>20</span> Services</p>
             </div>
           </Col>
-          <Col lg={3} md={6} sm={6} xs = {6}>
+          <Col lg={3} md={6} sm={6} xs={6}>
             <div className="divBox">
               <p className="pBoxTitle">Profile</p>
               <p className="pBoxTitleResult"><span>12.11.19</span> Last Edit</p>
@@ -88,7 +91,7 @@ const dashboard = () => (
         <Row className="rowTable" style={{ paddingLeft: "20px" }}>
           <main>
             <input id="tab1" type="radio" name="tabs" defaultChecked />
-           
+
             <label htmlFor="tab1">Membership</label>
             <input id="tab2" type="radio" name="tabs" />
             <label htmlFor="tab2">Payments</label>

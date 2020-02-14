@@ -34,15 +34,13 @@ $(document).ready(function () {
 
 });
 
-jQuery(window).resize(function () {
-    var screen = $(window)
-    if (screen.width < 510) {
-        $(".pNameProfile").css('display','block');
-    }
-    else {
-        $(".divNameStatus").addClass("form-inline");
-    }
-});
+window.onload = function () {
+    const element = document.querySelector('#load')
+    element.classList.add('animated', 'fadeOut')
+    $('loader').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style','display: none !important'));
+}
+
+
 
 
 
