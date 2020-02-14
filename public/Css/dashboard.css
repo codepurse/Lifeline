@@ -78,6 +78,15 @@ body, html {
   th {
     color: #3b3b66 !important;
   }
+
+  .pHeaderProfile {
+    margin-left: -90px !important;
+  }
+
+  .imgEdit {
+    margin-right: -20px !important;
+    margin-top: 5px !important;
+  }
 }
 
 .colSideMenu {
