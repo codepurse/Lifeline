@@ -9,8 +9,18 @@ import Loader from "../components/loader";
 import Head from "next/head";
 
 
-const dashboard = () => (
-  <div>
+const dashboard = () => {
+  function loadwindows() {
+    document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+            const element = document.querySelector('#load')
+            element.classList.add('animated', 'fadeOut')
+            $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
+        }
+    }
+}
+return(
+  <div onLoad = {loadwindows}>
     <head>
       <meta charset="utf-8" />
       <meta
@@ -38,6 +48,7 @@ const dashboard = () => (
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"
       ></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"></link>
       <link rel="stylesheet" type="text/css" href="Css/dashboard.css" />
       <script type="text/javascript" src="Script/myScript.js"></script>
       <link
@@ -48,7 +59,7 @@ const dashboard = () => (
         href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap"
         rel="stylesheet"
       />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"></link>
+     
     </head>
     <body>
       <Loader></Loader>
@@ -235,6 +246,6 @@ const dashboard = () => (
       <Bottom></Bottom>
     </body>
   </div>
-);
+)};
 
 export default dashboard;
