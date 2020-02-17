@@ -83,6 +83,9 @@ body, html {
     margin-right: -20px !important;
     margin-top: 5px !important;
   }
+  .imgModal {
+    width: 150px !important; 
+  }
 }
 
 .colSideMenu {
@@ -756,77 +759,7 @@ textarea {
 
 /* Loader */
 
-@-webkit-keyframes pulsate {
-  0% {
-    background-color: #f44336;
-  }
-  25% {
-    background-color: #E91E63;
-  }
-  50% {
-    background-color: #2196F3;
-  }
-  75% {
-    background-color: #FFC107;
-  }
-  100% {
-    background-color: #FF5722;
-  }
-}
 
-@-moz-keyframes pulsate {
-  0% {
-    background-color: #f44336;
-  }
-  25% {
-    background-color: #E91E63;
-  }
-  50% {
-    background-color: #2196F3;
-  }
-  75% {
-    background-color: #FFC107;
-  }
-  100% {
-    background-color: #FF5722;
-  }
-}
-
-@-o-keyframes pulsate {
-  0% {
-    background-color: #f44336;
-  }
-  25% {
-    background-color: #E91E63;
-  }
-  50% {
-    background-color: #2196F3;
-  }
-  75% {
-    background-color: #FFC107;
-  }
-  100% {
-    background-color: #FF5722;
-  }
-}
-
-@keyframes pulsate {
-  0% {
-    background-color: #f44336;
-  }
-  25% {
-    background-color: #E91E63;
-  }
-  50% {
-    background-color: #2196F3;
-  }
-  75% {
-    background-color: #FFC107;
-  }
-  100% {
-    background-color: #FF5722;
-  }
-}
 
 @-webkit-keyframes move {
   to {

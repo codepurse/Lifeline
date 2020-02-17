@@ -25,7 +25,9 @@ const Bottom = () => (
                 </Link>
             </Col>
             <Col xs={2}>
-                <img src="Image/payment.png" className="imgLogo" />
+                <Link href="/payments">
+                    <img src="Image/payment.png" className="imgLogo" />
+                </Link>
             </Col>
         </Row>
     </Container>
