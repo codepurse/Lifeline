@@ -25,7 +25,7 @@ const payments = () => {
     { 'name': 'Nathan Nakar', 'items': 'Booking - Doctor on Call', 'date': 'December 24, 2019', status: 'Pending' }]
     return (
 
-        <div onLoad = {loadwindows}>
+        <div onLoad={loadwindows}>
             <head>
                 <meta charset="utf-8" />
                 <meta
@@ -67,7 +67,7 @@ const payments = () => {
             <Loader></Loader>
             <Navbar></Navbar>
             <Sidebar></Sidebar>
-            <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className = "colMain">
+            <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className="colMain">
                 <Row style={{ paddingTop: "100px" }}>
                     <Col lg={6}>
                         <p className="pNav">

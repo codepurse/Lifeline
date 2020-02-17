@@ -14,13 +14,21 @@ const membership = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
+  function loadwindows() {
+    const element = document.querySelector('#load')
+    element.classList.add('animated', 'fadeOut')
+    $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
+
+  }
+
   const memberships = [{ 'name': 'Alfon Labadan', 'items': 'Membership - Group Plan 2 Years', 'date': 'June 12, 2019', status: 'Paid' },
   { 'name': 'Eskye Custodio', 'items': 'Membership - Group Plan 1 Year', 'date': 'March 22, 2019', status: 'Failed' },
   { 'name': 'Leo Sanico', 'items': 'Membership - Individual Plan 1 Year', 'date': 'December 20, 2020', status: 'Pending' }]
 
 
   return (
-    <div>
+    <div onLoad = {loadwindows}>
       <head>
         <meta charset="utf-8" />
         <meta
