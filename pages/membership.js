@@ -18,7 +18,6 @@ const membership = () => {
   { 'name': 'Eskye Custodio', 'items': 'Membership - Group Plan 1 Year', 'date': 'March 22, 2019', status: 'Failed' },
   { 'name': 'Leo Sanico', 'items': 'Membership - Individual Plan 1 Year', 'date': 'December 20, 2020', status: 'Pending' }]
 
-  
 
   return (
     <div>
@@ -59,12 +58,12 @@ const membership = () => {
           href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap"
           rel="stylesheet"
         />
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"></link>
       </head>
       <Loader></Loader>
       <Navbar></Navbar>
       <Sidebar></Sidebar>
-      <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className = "colMain">
+      <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className="colMain">
         <Row style={{ paddingTop: "100px" }}>
           <Col lg={6}>
             <p className="pNav pNav1">
@@ -75,8 +74,9 @@ const membership = () => {
             <button className="float-right btnAdd" onClick={handleShow}>&#x2b;&nbsp;Add Membership</button>
           </Col>
         </Row>
-        <Row style={{ marginTop: "-10px" }} className = "rowTag">
+        <Row style={{ marginTop: "-10px" }} className="rowTag">
           <Col lg={6}>
+
             <button className="btnTag">
               <img
                 src="Image/filter.png"
@@ -86,24 +86,15 @@ const membership = () => {
             </button>
             <button className="btnTagList btnPaid">
               Paid
-            <img
-                src="Image/close.png"
-                style={{ width: "10px", marginLeft: "10px" }}
-              ></img>
+            <span className="span" style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
             <button className="btnTagList btnFailed">
               Failed
-            <img
-                src="Image/close.png"
-                style={{ width: "10px", marginLeft: "10px" }}
-              ></img>
+              <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
             <button className="btnTagList btnPending">
               Pending
-            <img
-                src="Image/close.png"
-                style={{ width: "10px", marginLeft: "10px" }}
-              ></img>
+              <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
           </Col>
           <Col lg={6}>
@@ -113,7 +104,7 @@ const membership = () => {
           </Col>
         </Row>
         <Row style={{ marginTop: "40px" }} >
-          <Col lg={12} className = "colTable">
+          <Col lg={12} className="colTable">
             <table id="myTable">
               <thead>
                 <tr>

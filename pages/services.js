@@ -5,10 +5,19 @@ import { Container, Row, Col, OverlayTrigger } from "react-bootstrap";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import Head from "next/head";
+import Loader from "../components/loader";
+import Bottom from "../components/bottom";
 import { statusColor } from '../utils/layout'
 
 
 const payments = () => {
+
+    function loadwindows() {
+        const element = document.querySelector('#load')
+        element.classList.add('animated', 'fadeOut')
+        $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
+
+    }
 
     const memberships = [{ 'name': 'Alfon Labadan', 'items': 'Booking - Doctor on Call', 'date': 'June 12, 2019', status: 'Paid' },
     { 'name': 'Eskye Custodio', 'items': 'Booking - Doctor on Call', 'date': 'June 12, 2019', status: 'Failed' },
@@ -16,7 +25,7 @@ const payments = () => {
     { 'name': 'Nathan Nakar', 'items': 'Booking - Doctor on Call', 'date': 'December 24, 2019', status: 'Pending' }]
     return (
 
-        <div>
+        <div onLoad = {loadwindows}>
             <head>
                 <meta charset="utf-8" />
                 <meta
@@ -55,9 +64,10 @@ const payments = () => {
                     rel="stylesheet"
                 />
             </head>
+            <Loader></Loader>
             <Navbar></Navbar>
             <Sidebar></Sidebar>
-            <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }}>
+            <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className = "colMain">
                 <Row style={{ paddingTop: "100px" }}>
                     <Col lg={6}>
                         <p className="pNav">
@@ -68,7 +78,7 @@ const payments = () => {
                         <button className="float-right btnAdd">&#x2b;&nbsp;Add Services</button>
                     </Col>
                 </Row>
-                <Row style={{ marginTop: "-10px" }}>
+                <Row style={{ marginTop: "-10px" }} className="rowTag">
                     <Col lg={6}>
                         <button className="btnTag">
                             <img
@@ -132,6 +142,7 @@ const payments = () => {
                     </Col>
                 </Row>
             </Container>
+            <Bottom></Bottom>
         </div>
     )
 };

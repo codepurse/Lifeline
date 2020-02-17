@@ -4,7 +4,10 @@ $(document).ready(function () {
     });
 
     $(".btnTagList").click(function () {
-        $(this).css('display', 'none');
+        $(this).css('backgroundColor', 'white');
+        $(this).css('color', '#3b3b66');
+        $(this).css('border', '2px solid #3b3b66');
+        $(this).css('color', 'white');
     });
 
 
@@ -30,8 +33,6 @@ $(document).ready(function () {
 
     var rowCount = $('#myTable tr').length;
     $('.pNumber').html(rowCount + " " + "entries");
-
-
 
 
 });

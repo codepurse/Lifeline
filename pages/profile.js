@@ -8,20 +8,18 @@ import Bottom from "../components/bottom";
 import Loader from "../components/loader";
 import Head from "next/head";
 
-const profile = () => {
 
+const profile = () => {
     function loadwindows() {
-        document.onreadystatechange = function () {
-            if (document.readyState == "complete") {
-                const element = document.querySelector('#load')
-                element.classList.add('animated', 'fadeOut')
-                $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
-            }
-        }
-    }
+        const element = document.querySelector('#load')
+        element.classList.add('animated', 'fadeOut')
+        $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
+    
+      }
+
 
     return (
-        <div onLoad={loadwindows}>
+        <div onLoad = {loadwindows} >
             <head>
                 <meta charset="utf-8" />
                 <meta
@@ -60,7 +58,6 @@ const profile = () => {
                     href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap"
                     rel="stylesheet"
                 />
-
             </head>
             <Loader></Loader>
             <Sidebar></Sidebar>
