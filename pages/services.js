@@ -16,7 +16,9 @@ const payments = () => {
         const element = document.querySelector('#load')
         element.classList.add('animated', 'fadeOut')
         $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
-
+        var rowCount = $('#myTable tr').length;
+        rowCount = rowCount - 1;
+        $('.pNumber').html(rowCount + " " + "entries");
     }
 
     const memberships = [{ 'name': 'Alfon Labadan', 'items': 'Booking - Doctor on Call', 'date': 'June 12, 2019', status: 'Paid' },

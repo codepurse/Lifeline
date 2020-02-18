@@ -14,9 +14,16 @@ const payments = () => {
     { 'name': 'Eskye Custodio', 'items': 'Booking - Doctor on Call', 'date': 'June 12, 2019', status: 'Failed' },
     { 'name': 'Leo Sanico', 'items': 'Booking - Book A Nurse', 'date': 'March 18, 2019', status: 'Pending' },
     { 'name': 'Nathan Nakar', 'items': 'Booking - Doctor on Call', 'date': 'December 24, 2019', status: 'Pending' }]
+   
+   function loadwindows() {
+    var rowCount = $('#myTable tr').length;
+    rowCount = rowCount - 1;
+    $('.pNumber').html(rowCount + " " + "entries");
+   }
+   
     return (
 
-        <div>
+        <div onLoad = {loadwindows}>
             <head>
                 <meta charset="utf-8" />
                 <meta

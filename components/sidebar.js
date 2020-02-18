@@ -25,6 +25,7 @@ const Sidebar = () => {
       $('.btnNotes').css('left', '50px');
       $('.btnNotes').css('width', '45px');
       $('.btnNotes > span').css('display', 'none');
+      $('.imgLogoLifeline').css('margin-left','auto');
     }
     else {
       $('.colSideMenu').css('width', '175px');
@@ -45,6 +46,7 @@ const Sidebar = () => {
       $('.btnDashboard > span').css('display', 'inline');
       $('.btnNotes').css('width', '150px');
       $('.btnNotes > span').css('display', 'inline');
+      $('.imgLogoLifeline').css('margin-left','55px');
     }
   }
 

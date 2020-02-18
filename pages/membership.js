@@ -19,7 +19,9 @@ const membership = () => {
     const element = document.querySelector('#load')
     element.classList.add('animated', 'fadeOut')
     $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
-
+    var rowCount = $('#myTable tr').length;
+    rowCount = rowCount - 1;
+    $('.pNumber').html(rowCount + " " + "entries");
   }
 
   const memberships = [{ 'name': 'Alfon Labadan', 'items': 'Membership - Group Plan 2 Years', 'date': 'June 12, 2019', status: 'Paid' },
@@ -27,8 +29,9 @@ const membership = () => {
   { 'name': 'Leo Sanico', 'items': 'Membership - Individual Plan 1 Year', 'date': 'December 20, 2020', status: 'Pending' }]
 
 
+
   return (
-    <div onLoad = {loadwindows}>
+    <div onLoad={loadwindows}>
       <head>
         <meta charset="utf-8" />
         <meta
@@ -92,15 +95,15 @@ const membership = () => {
                 style={{ width: "15px" }}
               ></img>
             </button>
-            <button className="btnTagList btnPaid">
+            <button className="btnTagList btnPaid" onClick = {this.filter}>
               Paid
             <span className="span" style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
-            <button className="btnTagList btnFailed">
+            <button className="btnTagList btnFailed" onClick = {this.filter}>
               Failed
               <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
-            <button className="btnTagList btnPending">
+            <button className="btnTagList btnPending" onClick = {this.filter}>
               Pending
               <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
@@ -133,40 +136,6 @@ const membership = () => {
                     </tr>
                   );
                 })}
-                {/* <tr>
-                  <td data-column="Full Name">Alfon Labadan</td>
-                  <td data-column="Items">Booking - Doctor on Call</td>
-                  <td data-column="Date">June 12, 2019</td>
-                  <td data-column="Status">Paid</td>
-                </tr>
-                <tr>
-                  <td data-column="Full Name">Eskye Custodio</td>
-                  <td data-column="Items">Booking - Doctor on Call</td>
-                  <td data-column="Date">May 10, 2019</td>
-                  <td data-column="Status">Failed</td>
-                </tr>
-                <tr>
-                  <td data-column="Full Name">Nathan Nakar</td>
-                  <td data-column="Items">
-                    Booking - Book A MedTech, Book A Nurse
-                </td>
-                  <td data-column="Date">February 20, 2019</td>
-                  <td data-column="Status">Paid</td>
-                </tr>
-                <tr>
-                  <td data-column="Full Name">Randolph Yu</td>
-                  <td data-column="Items">
-                    Booking - Book A MedTech, Book A Nurse
-                </td>
-                  <td data-column="Date">November 22, 2019</td>
-                  <td data-column="Status">Failed</td>
-                </tr>
-                <tr>
-                  <td data-column="Full Name">Leo Sanico</td>
-                  <td data-column="Items">Group Plan 2 Years</td>
-                  <td data-column="Date">May 10, 2019</td>
-                  <td data-column="Status">Pending</td>
-                </tr> */}
               </tbody>
             </table>
           </Col>
@@ -184,11 +153,11 @@ const membership = () => {
         <Modal.Body className="text-center">
           <Container fluid={true}>
             <Row>
-              <Col lg={6} md = {6} sm = {6}className="colModal">
+              <Col lg={6} md={6} sm={6} className="colModal">
                 <img src="Image/team(3).png" className="img-fluid imgModa mx-auto"></img>
                 <p className="pChoose">Individual</p>
               </Col>
-              <Col lg={6} md = {6} sm = {6} className="colModal">
+              <Col lg={6} md={6} sm={6} className="colModal">
                 <img src="Image/boss.png" className="img-fluid imgModal mx-auto" style={{ width: "115px", marginTop: "10px" }}></img>
                 <p className="pChoose" style={{ marginTop: "10px" }}>Group</p>
               </Col>

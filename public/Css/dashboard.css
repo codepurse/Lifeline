@@ -92,6 +92,17 @@ body, html {
   .imgModal {
     width: 150px !important;
   }
+  .modal-dialog {
+    position: relative;
+    display: table;
+    /* This is important */
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+    min-width: 350px;
+    max-width: 350px;
+    transition: all 0.2s;
+  }
 }
 
 .colSideMenu {
@@ -113,6 +124,7 @@ body, html {
   width: 40px;
   left: 15px;
   filter: brightness(0) invert(1);
+  transition: all 0.2s;
 }
 
 .rowSide {
@@ -963,8 +975,64 @@ ul.ks-cboxtags li input[type="checkbox"] {
   border: 1px solid #BDBDBD;
   width: 100%;
   padding: 5px 10px;
-  margin-top: -5px;
   border-radius: 2px;
+}
+
+.txtAllergen {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid #BDBDBD;
+  width: 80%;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.btnRemove {
+  font-family: Quicksand;
+  color: white;
+  font-size: 1rem;
+  background-color: #cc292f;
+  border: 0px;
+  width: 15%;
+  padding: 5px 10px;
+  float: right;
+  border-radius: 2px;
+  margin-top: 10px;
+  box-shadow: 0 2px 16px -6px #cc292f !important;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#add {
+  font-family: Quicksand;
+  color: white;
+  font-size: 0.9rem;
+  background-color: #cc292f;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 0px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  box-shadow: 0 2px 16px -6px #cc292f !important;
+  transition: all 0.2s;
+}
+
+.btnAddMember {
+  font-family: Quicksand;
+  color: white;
+  font-size: 0.9rem;
+  background-color: #cc292f;
+  font-weight: 500;
+  border-radius: 2px;
+  border: 0px;
+  padding: 5px 10px;
+  width: 150px;
+  margin-top: 5px;
+  box-shadow: 0 2px 16px -6px #cc292f !important;
+  transition: all 0.2s;
 }
 
 .txtBox:focus {
@@ -977,9 +1045,9 @@ input[type="date"] {
   color: #3b3b66;
   font-family: Quicksand;
   font-size: 18px;
-  border:1px solid #BDBDBD;
+  border: 1px solid #BDBDBD;
   font-size: 0.9rem;
-  padding:5px 10px;
+  padding: 5px 10px;
   display: inline-block !important;
   visibility: visible !important;
   width: 100%;
@@ -994,6 +1062,7 @@ input[type="date"] {
   padding-left: 15px;
   margin-top: -10px;
 }
+
 .cbx span {
   font-family: Quicksand;
   color: #3b3b66;
@@ -1003,6 +1072,7 @@ input[type="date"] {
   vertical-align: middle;
   transform: translate3d(0, 0, 0);
 }
+
 .cbx span:first-child {
   position: relative;
   width: 18px;
@@ -1013,6 +1083,7 @@ input[type="date"] {
   border: 1px solid #9098A9;
   transition: all 0.2s ease;
 }
+
 .cbx span:first-child svg {
   position: absolute;
   top: 3px;
@@ -1028,6 +1099,7 @@ input[type="date"] {
   transition-delay: 0.1s;
   transform: translate3d(0, 0, 0);
 }
+
 .cbx span:first-child:before {
   content: "";
   width: 100%;
@@ -1038,22 +1110,26 @@ input[type="date"] {
   opacity: 1;
   border-radius: 50%;
 }
+
 .cbx span:last-child {
   padding-left: 8px;
 }
+
 .cbx:hover span:first-child {
   border-color: #f33a3a;
 }
 
-.inp-cbx:checked + .cbx span:first-child {
+.inp-cbx:checked+.cbx span:first-child {
   background: #f33a3a;
   border-color: #f33a3a;
   animation: wave 0.4s ease;
 }
-.inp-cbx:checked + .cbx span:first-child svg {
+
+.inp-cbx:checked+.cbx span:first-child svg {
   stroke-dashoffset: 0;
 }
-.inp-cbx:checked + .cbx span:first-child:before {
+
+.inp-cbx:checked+.cbx span:first-child:before {
   transform: scale(3.5);
   opacity: 0;
   transition: all 0.6s ease;
@@ -1070,4 +1146,80 @@ input[type="date"] {
   color: #3b3b66;
   font-size: 1rem;
   font-weight: 500;
+}
+
+.modalTitleLogout {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 12px;
+}
+
+.modalFooter {
+  background-color: #eff0f6;
+}
+
+.pModalBody {
+  font-family: Quicksand;
+  color: #3b3b66;
+  font-weight: 500;
+}
+
+.btnCancel {
+  font-family: Quicksand;
+  color: #3b3b66;
+  background-color: transparent !important;
+  width: auto;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.btnCancel:hover {
+  color: #cc292f !important;
+  background-color: transparent !important;
+  border-radius: 0px !important;
+}
+
+.btnCancel:active {
+  color: #cc292f !important;
+}
+
+.btnLogout {
+  font-family: Quicksand;
+  color: white;
+  background-color: #cc292f;
+  width: auto;
+  padding: 5px 10px;
+  box-shadow: 0 2px 16px -6px #cc292f !important;
+}
+
+.btnLogout:hover {
+  border-radius: 2px !important;
+  background-color: #cc292f;
+}
+
+.btnLogout:active {
+  background-color: #cc292f !important;
+  color: white !important;
+}
+
+.btnLogout:focus {
+  background-color: #cc292f !important;
+}
+
+.btnCancelMember {
+  font-family: Quicksand;
+  color: #3b3b66;
+  background-color: transparent;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 0px;
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btnCancelMember:hover {
+  color: #cc292f;
 }
