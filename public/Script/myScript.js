@@ -48,10 +48,10 @@ $(document).ready(function () {
             $(this).css('border', '2px solid #3b3b66');
             $(this).css('color', '#3b3b66');
         }
-    }); 
+    });
 
     $('.btnFailed').click(function () {
-       if ($(this).attr('data-click-state') == 1) {
+        if ($(this).attr('data-click-state') == 1) {
             $('table tr td:nth-child(4)').each(function () {
                 $(this).text() == 'Failed' && $(this).parent().find('td').css('display', 'table-cell');
             });

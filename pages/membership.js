@@ -15,6 +15,7 @@ const membership = () => {
   const handleShow = () => setShow(true);
 
 
+
   function loadwindows() {
     const element = document.querySelector('#load')
     element.classList.add('animated', 'fadeOut')
@@ -29,10 +30,32 @@ const membership = () => {
   { 'name': 'Leo Sanico', 'items': 'Membership - Individual Plan 1 Year', 'date': 'December 20, 2020', status: 'Pending' }]
 
 
+  function btnFilterPaid() {
+    if ($(this).attr('data-click-state') == 1) {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Paid' && $(this).parent().find('td').css('display', 'table-cell');
+      });
+      $(this).attr('data-click-state', 0)
+      $(this).css('backgroundColor', '#3b3b66');
+      $(this).css('color', 'white');
+      $(this).css('border', '2px solid white');
+      $(this).css('color', 'white');
+    } else {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Paid' && $(this).parent().find('td').css('display', 'none');
+      });
+      $(this).attr('data-click-state', 1)
+      $(this).css('backgroundColor', 'white');
+      $(this).css('color', '#3b3b66');
+      $(this).css('border', '2px solid #3b3b66');
+      $(this).css('color', '#3b3b66');
+    }
+  }
 
   return (
     <div onLoad={loadwindows}>
       <head>
+        <script type="text/javascript" src="Script/myScript.js"></script>
         <meta charset="utf-8" />
         <meta
           name="viewport"
@@ -60,7 +83,7 @@ const membership = () => {
           crossorigin="anonymous"
         ></script>
         <link rel="stylesheet" type="text/css" href="Css/dashboard.css" />
-        <script type="text/javascript" src="Script/myScript.js"></script>
+
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
           rel="stylesheet"
@@ -87,7 +110,6 @@ const membership = () => {
         </Row>
         <Row style={{ marginTop: "-10px" }} className="rowTag">
           <Col lg={6}>
-
             <button className="btnTag">
               <img
                 src="Image/filter.png"
@@ -95,15 +117,15 @@ const membership = () => {
                 style={{ width: "15px" }}
               ></img>
             </button>
-            <button className="btnTagList btnPaid" onClick = {this.filter}>
+            <button className="btnTagList btnPaid" onClick={btnFilterPaid}>
               Paid
             <span className="span" style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
-            <button className="btnTagList btnFailed" onClick = {this.filter}>
+            <button className="btnTagList btnFailed">
               Failed
               <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
-            <button className="btnTagList btnPending" onClick = {this.filter}>
+            <button className="btnTagList btnPending">
               Pending
               <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
