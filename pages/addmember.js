@@ -24,9 +24,12 @@ const addmember = () => {
     function btnAddAllergen() {
         $('<div/>').addClass('new-text-div row')
             .html($('<input type="textbox"/>').addClass('txtAllergen'))
-            .append($('<button onClick = {btnRemove}/>').addClass('btnRemove').text('Remove'))
+            .append($('<button/>').addClass('btnRemove').text('Remove'))
             .insertBefore('#add');
+            const deletebutton = document.querySelector('.btnRemove')
     }
+
+
 
 
 
@@ -129,13 +132,13 @@ const addmember = () => {
                         <input type="date" name="dateofbirth" id="dateofbirth" placeholder="MM/DD/YYYY" />
                     </Col>
                     <Col lg={4} md={4}>
-                        <p className="pTitleAdd">AGE</p>
+                        <p className="pTitleAdd">BLOOD TYPE</p>
                         <input
                             type="text"
                             value={age}
                             onChange={e => setAge(e.target.value)}
                             className="txtBox"
-                            placeholder="Enter age"
+                            placeholder="Enter blood type"
                         />
                     </Col>
                     <Col lg={4} md={4}>
@@ -148,17 +151,7 @@ const addmember = () => {
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "12px" }}>
-                    <Col lg={1}>
-                        <p className="pTitleAdd">AGE</p>
-                        <input
-                            type="text"
-                            value={age}
-                            onChange={e => setAge(e.target.value)}
-                            className="txtBox"
-                            placeholder="Enter age"
-                        />
-                    </Col>
-                    <Col lg={7}>
+                    <Col lg={8}>
                         <p className="pTitleAdd">GENDER</p>
                         <input type="checkbox" id="chk3" name="fruit-1" value="Apple" />
                         <label for="chk3">&nbsp;Single</label>
