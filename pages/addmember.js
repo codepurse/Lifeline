@@ -152,7 +152,7 @@ const addmember = () => {
                 </Row>
                 <Row style={{ marginTop: "12px" }}>
                     <Col lg={8}>
-                        <p className="pTitleAdd">GENDER</p>
+                        <p className="pTitleAdd">CIVIL STATUS</p>
                         <input type="checkbox" id="chk3" name="fruit-1" value="Apple" />
                         <label for="chk3">&nbsp;Single</label>
                         <input type="checkbox" id="chk4" name="fruit-1" value="Apple" />
