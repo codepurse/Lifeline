@@ -26,12 +26,14 @@ const addmember = () => {
             .html($('<input type="textbox"/>').addClass('txtAllergen'))
             .append($('<button/>').addClass('btnRemove').text('Remove'))
             .insertBefore('#add');
-            const deletebutton = document.querySelector('.btnRemove')
+        const deletebutton = document.querySelector('.btnRemove');
+        deletebutton.onclick = myFunctionDelete;
     }
 
-
-
-
+    function myFunctionDelete(e) {
+        e.preventDefault();
+        $(this).closest('div.new-text-div').remove();
+    }
 
 
 
@@ -152,7 +154,7 @@ const addmember = () => {
                 </Row>
                 <Row style={{ marginTop: "12px" }}>
                     <Col lg={8}>
-                        <p className="pTitleAdd">CIVIL STATUS</p>
+                        <p className="pTitleAdd"></p>
                         <input type="checkbox" id="chk3" name="fruit-1" value="Apple" />
                         <label for="chk3">&nbsp;Single</label>
                         <input type="checkbox" id="chk4" name="fruit-1" value="Apple" />
