@@ -21,12 +21,15 @@ const addmember = () => {
         $('loader').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animation end', document.getElementById('load').setAttribute('style', 'display: none !important'));
     }
 
-    function addallergens() {
-        $('<div/>').addClass('new-text-div')
-            .html($('<input type="textbox"/>').addClass('someclass'))
-            .append($('<button/>').addClass('remove').text('Remove'))
-            .insertBefore(this);
+    function btnAddAllergen() {
+        $('<div/>').addClass('new-text-div row')
+            .html($('<input type="textbox"/>').addClass('txtAllergen'))
+            .append($('<button onClick = {btnRemove}/>').addClass('btnRemove').text('Remove'))
+            .insertBefore('#add');
     }
+
+
+
 
 
     return (
@@ -136,17 +139,12 @@ const addmember = () => {
                         />
                     </Col>
                     <Col lg={4} md={4}>
-                        <p className="pTitleAdd">GENDER</p>
-                        <input className="inp-cbx" id="cbx" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Male</span></label>
-                        <input className="inp-cbx" id="cbx" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Female</span></label>
+                        <div class="chk" style={{ marginTop: "30px" }}>
+                            <input type="checkbox" id="chk1" name="fruit-1" value="Apple" />
+                            <label for="chk1">&nbsp;Male</label>
+                            <input type="checkbox" id="chk2" name="fruit-1" value="Apple" />
+                            <label for="chk2">&nbsp;Female</label>
+                        </div>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "12px" }}>
@@ -162,39 +160,21 @@ const addmember = () => {
                     </Col>
                     <Col lg={7}>
                         <p className="pTitleAdd">GENDER</p>
-                        <input className="inp-cbx" id="cbx" name = "chksingle" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Single</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkmarried" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Married</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkseperated" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Seperated</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkwidowed" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Widowed</span></label>
+                        <input type="checkbox" id="chk3" name="fruit-1" value="Apple" />
+                        <label for="chk3">&nbsp;Single</label>
+                        <input type="checkbox" id="chk4" name="fruit-1" value="Apple" />
+                        <label for="chk4">&nbsp;Married</label>
+                        <input type="checkbox" id="chk5" name="fruit-1" value="Apple" />
+                        <label for="chk5">&nbsp;Seperated</label>
+                        <input type="checkbox" id="chk6" name="fruit-1" value="Apple" />
+                        <label for="chk6">&nbsp;Widowed</label>
                     </Col>
                     <Col lg={4}>
                         <p className="pTitleAdd">NATIONALITY</p>
-                        <input className="inp-cbx" id="cbx" name = "chkfilipino" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Filipino</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkothers" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Others</span></label>
+                        <input type="checkbox" id="chk7" name="fruit-1" value="Apple" />
+                        <label for="chk7">&nbsp;Filipino</label>
+                        <input type="checkbox" id="chk8" name="fruit-1" value="Apple" />
+                        <label for="chk8">&nbsp;Others</label>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "20px" }}>
@@ -345,7 +325,7 @@ const addmember = () => {
                 </Row>
                 <Row style={{ marginTop: "5px" }}>
                     <Col lg={12}>
-                        <button id="add">Add allergens</button>
+                        <button id="add" onClick={btnAddAllergen}>Add allergens</button>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "20px" }}>
@@ -353,47 +333,26 @@ const addmember = () => {
                         <p className="pBasic">Disease prevalent in the family</p>
                     </Col>
                     <Col lg={12}>
-                        <input className="inp-cbx" id="cbx" name = "chkhpn" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>HPN</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkdiabetic" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Diabetic Mellitus</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkallergy" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Allergy</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkasthma" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Asthma</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chktb" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>TB</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkheart" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Heart Disease</span></label>
-                        <input className="inp-cbx" id="cbx" name = "chkcancer" type="checkbox" style={{ display: 'none' }} />
-                        <label className="cbx" htmlFor="cbx"><span>
-                            <svg width="12px" height="10px" viewBox="0 0 12 10">
-                                <polyline points="1.5 6 4.5 9 10.5 1" />
-                            </svg></span><span>Cancer</span></label>
+                        <input type="checkbox" id="chk9" name="fruit-1" value="Apple" />
+                        <label for="chk9">&nbsp;HPN</label>
+                        <input type="checkbox" id="chk10" name="fruit-1" value="Apple" />
+                        <label for="chk10">&nbsp;Diabetic Mellitus</label>
+                        <input type="checkbox" id="chk11" name="fruit-1" value="Apple" />
+                        <label for="chk11">&nbsp;Allergy</label>
+                        <input type="checkbox" id="chk12" name="fruit-1" value="Apple" />
+                        <label for="chk12">&nbsp;Asthma</label>
+                        <input type="checkbox" id="chk13" name="fruit-1" value="Apple" />
+                        <label for="chk13">&nbsp;TB</label>
+                        <input type="checkbox" id="chk14" name="fruit-1" value="Apple" />
+                        <label for="chk14">&nbsp;Heart Disease</label>
+                        <input type="checkbox" id="chk15" name="fruit-1" value="Apple" />
+                        <label for="chk15">&nbsp;Cancer</label>
                     </Col>
                 </Row>
-                <Row style={{ marginTop: "20px",marginBottom: "20px" }}>
-                    <Col lg = {12}>
-                        <button className = "btnAddMember">Add Member</button>
-                        <button className = "btnCancelMember">Cancel</button>
+                <Row style={{ marginTop: "20px", marginBottom: "20px" }}>
+                    <Col lg={12}>
+                        <button className="btnAddMember">Add Member</button>
+                        <button className="btnCancelMember">Cancel</button>
                     </Col>
                 </Row>
             </Container>

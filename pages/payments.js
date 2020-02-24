@@ -20,6 +20,77 @@ const payments = () => {
     rowCount = rowCount - 1;
     $('.pNumber').html(rowCount + " " + "entries");
    }
+
+   var filterState = 1;
+   function btnFilterPaid() {
+    if (filterState == 1) {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Paid' && $(this).parent().find('td').css('display', 'table-cell');
+      });
+      $('.btnPaid').css('backgroundColor', '#3b3b66');
+      $('.btnPaid').css('color', 'white');
+      $('.btnPaid').css('border', '2px solid white');
+      $('.btnPaid').css('color', 'white');
+      filterState = 0;
+    }
+    else {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Paid' && $(this).parent().find('td').css('display', 'none');
+      });
+      $('.btnPaid').css('backgroundColor', 'white');
+      $('.btnPaid').css('color', '#3b3b66');
+      $('.btnPaid').css('border', '2px solid #3b3b66');
+      $('.btnPaid').css('color', '#3b3b66');
+      filterState = 1;
+    }
+  }
+
+  function btnFilterPending() {
+    if (filterState == 1) {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Pending' && $(this).parent().find('td').css('display', 'table-cell');
+      });
+      $('.btnPending').css('backgroundColor', '#3b3b66');
+      $('.btnPending').css('color', 'white');
+      $('.btnPending').css('border', '2px solid white');
+      $('.btnPending').css('color', 'white');
+      filterState = 0;
+    }
+    else {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Pending' && $(this).parent().find('td').css('display', 'none');
+      });
+      $('.btnPending').css('backgroundColor', 'white');
+      $('.btnPending').css('color', '#3b3b66');
+      $('.btnPending').css('border', '2px solid #3b3b66');
+      $('.btnPending').css('color', '#3b3b66');
+      filterState = 1;
+    }
+  }
+
+  function btnFilterFailed() {
+    if (filterState == 1) {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Failed' && $(this).parent().find('td').css('display', 'table-cell');
+      });
+      $('.btnFailed').css('backgroundColor', '#3b3b66');
+      $('.btnFailed').css('color', 'white');
+      $('.btnFailed').css('border', '2px solid white');
+      $('.btnFailed').css('color', 'white');
+      filterState = 0;
+    }
+    else {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Failed' && $(this).parent().find('td').css('display', 'none');
+      });
+      $('.btnFailed').css('backgroundColor', 'white');
+      $('.btnFailed').css('color', '#3b3b66');
+      $('.btnFailed').css('border', '2px solid #3b3b66');
+      $('.btnFailed').css('color', '#3b3b66');
+      filterState = 1;
+    }
+  }
+
    
     return (
 
@@ -76,7 +147,7 @@ const payments = () => {
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "-10px" }}>
-                    <Col lg={6}>
+                    <Col lg={12}>
                         <button className="btnTag">
                             <img
                                 src="Image/filter.png"
@@ -84,32 +155,27 @@ const payments = () => {
                                 style={{ width: "15px" }}
                             ></img>
                         </button>
-                        <button className="btnTagList btnPaid">
+                        <button className="btnTagList btnPaid" onClick = {btnFilterPaid}>
                             Paid
             <img
                                 src="Image/close.png"
                                 style={{ width: "10px", marginLeft: "10px" }}
                             ></img>
                         </button>
-                        <button className="btnTagList btnFailed">
+                        <button className="btnTagList btnFailed" onClick = {btnFilterFailed}>
                             Failed
             <img
                                 src="Image/close.png"
                                 style={{ width: "10px", marginLeft: "10px" }}
                             ></img>
                         </button>
-                        <button className="btnTagList btnPending">
+                        <button className="btnTagList btnPending" onClick = {btnFilterPending}>
                             Pending
             <img
                                 src="Image/close.png"
                                 style={{ width: "10px", marginLeft: "10px" }}
                             ></img>
                         </button>
-                    </Col>
-                    <Col lg={6}>
-                        <p className="pSorted float-right">
-                            Sorted by <span>Paid</span>
-                        </p>
                     </Col>
                 </Row>
                 <Row style={{ marginTop: "40px" }}>

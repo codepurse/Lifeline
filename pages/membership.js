@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, OverlayTrigger, Tooltip, Dropdown, Modal, Button } from "react-bootstrap";
@@ -29,26 +30,73 @@ const membership = () => {
   { 'name': 'Eskye Custodio', 'items': 'Membership - Group Plan 1 Year', 'date': 'March 22, 2019', status: 'Failed' },
   { 'name': 'Leo Sanico', 'items': 'Membership - Individual Plan 1 Year', 'date': 'December 20, 2020', status: 'Pending' }]
 
-
+  var filterState = 1;
   function btnFilterPaid() {
-    if ($(this).attr('data-click-state') == 1) {
+    if (filterState == 1) {
       $('table tr td:nth-child(4)').each(function () {
         $(this).text() == 'Paid' && $(this).parent().find('td').css('display', 'table-cell');
       });
-      $(this).attr('data-click-state', 0)
-      $(this).css('backgroundColor', '#3b3b66');
-      $(this).css('color', 'white');
-      $(this).css('border', '2px solid white');
-      $(this).css('color', 'white');
-    } else {
+      $('.btnPaid').css('backgroundColor', '#3b3b66');
+      $('.btnPaid').css('color', 'white');
+      $('.btnPaid').css('border', '2px solid white');
+      $('.btnPaid').css('color', 'white');
+      filterState = 0;
+    }
+    else {
       $('table tr td:nth-child(4)').each(function () {
         $(this).text() == 'Paid' && $(this).parent().find('td').css('display', 'none');
       });
-      $(this).attr('data-click-state', 1)
-      $(this).css('backgroundColor', 'white');
-      $(this).css('color', '#3b3b66');
-      $(this).css('border', '2px solid #3b3b66');
-      $(this).css('color', '#3b3b66');
+      $('.btnPaid').css('backgroundColor', 'white');
+      $('.btnPaid').css('color', '#3b3b66');
+      $('.btnPaid').css('border', '2px solid #3b3b66');
+      $('.btnPaid').css('color', '#3b3b66');
+      filterState = 1;
+    }
+  }
+
+  function btnFilterPending() {
+    if (filterState == 1) {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Pending' && $(this).parent().find('td').css('display', 'table-cell');
+      });
+      $('.btnPending').css('backgroundColor', '#3b3b66');
+      $('.btnPending').css('color', 'white');
+      $('.btnPending').css('border', '2px solid white');
+      $('.btnPending').css('color', 'white');
+      filterState = 0;
+    }
+    else {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Pending' && $(this).parent().find('td').css('display', 'none');
+      });
+      $('.btnPending').css('backgroundColor', 'white');
+      $('.btnPending').css('color', '#3b3b66');
+      $('.btnPending').css('border', '2px solid #3b3b66');
+      $('.btnPending').css('color', '#3b3b66');
+      filterState = 1;
+    }
+  }
+
+  function btnFilterFailed() {
+    if (filterState == 1) {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Failed' && $(this).parent().find('td').css('display', 'table-cell');
+      });
+      $('.btnFailed').css('backgroundColor', '#3b3b66');
+      $('.btnFailed').css('color', 'white');
+      $('.btnFailed').css('border', '2px solid white');
+      $('.btnFailed').css('color', 'white');
+      filterState = 0;
+    }
+    else {
+      $('table tr td:nth-child(4)').each(function () {
+        $(this).text() == 'Failed' && $(this).parent().find('td').css('display', 'none');
+      });
+      $('.btnFailed').css('backgroundColor', 'white');
+      $('.btnFailed').css('color', '#3b3b66');
+      $('.btnFailed').css('border', '2px solid #3b3b66');
+      $('.btnFailed').css('color', '#3b3b66');
+      filterState = 1;
     }
   }
 
@@ -99,17 +147,17 @@ const membership = () => {
       <Sidebar></Sidebar>
       <Container fluid={true} style={{ zIndex: "-1", paddingLeft: "90px" }} className="colMain">
         <Row style={{ paddingTop: "100px" }}>
-          <Col lg={6}>
+          <Col lg={6} md={6}>
             <p className="pNav pNav1">
               Membership<span className="pNumber">56 entries</span>
             </p>
           </Col>
-          <Col lg={6}>
+          <Col lg={6} md={6}>
             <button className="float-right btnAdd" onClick={handleShow}>&#x2b;&nbsp;Add Membership</button>
           </Col>
         </Row>
         <Row style={{ marginTop: "-10px" }} className="rowTag">
-          <Col lg={6}>
+          <Col lg={12}>
             <button className="btnTag">
               <img
                 src="Image/filter.png"
@@ -121,19 +169,14 @@ const membership = () => {
               Paid
             <span className="span" style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
-            <button className="btnTagList btnFailed">
+            <button className="btnTagList btnFailed" onClick={btnFilterFailed}>
               Failed
               <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
-            <button className="btnTagList btnPending">
+            <button className="btnTagList btnPending" onClick={btnFilterPending}>
               Pending
               <span style={{ marginLeft: "10px" }}>&#x2715;</span>
             </button>
-          </Col>
-          <Col lg={6}>
-            <p className="pSorted float-right">
-              Sorted by <span>Paid</span>
-            </p>
           </Col>
         </Row>
         <Row style={{ marginTop: "40px" }} >
@@ -176,7 +219,9 @@ const membership = () => {
           <Container fluid={true}>
             <Row>
               <Col lg={6} md={6} sm={6} className="colModal">
-                <img src="Image/team(3).png" className="img-fluid imgModa mx-auto"></img>
+                <Link href="/addmember">
+                  <img src="Image/team(3).png" className="img-fluid imgModa mx-auto"></img>
+                </Link>
                 <p className="pChoose">Individual</p>
               </Col>
               <Col lg={6} md={6} sm={6} className="colModal">
